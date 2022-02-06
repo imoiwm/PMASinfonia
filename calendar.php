@@ -2,32 +2,12 @@
 <html lang="en-US">
     <head>
         <title>Calendar</title>
+        <link rel="stylesheet" type="text/css" href="calendar.css">
     </head>
-    <body>
+    <body id="calendar-body">
         <?php
          echo   "<div class=\"events-collection\">";
-         class Events extends RecursiveIteratorIterator {
-            function __construct($it) {
-                parent::__construct($it, self::LEAVES_ONLY);
-            }
-          
-            function current() {
-                static $times = 0;
-                $which = array("event-title", "event-date", "event-location", "event-description");
-                $times %= 4;
-                return "<p class=\"" . $which[$times++] . "\">" . parent::current() . "</p>";
-            }
-          
-            function beginChildren(): void {
-                static $id = 1;
-                echo "<div class=\"event\" id=\"event-$id\">";
-                $id++;
-            }
-          
-            function endChildren(): void {
-              echo "</div>" . "\n";
-            }
-          }
+         include("events.php");
          $server = "localhost";
          $database = "web_dev";
          $username = "prog";
@@ -42,9 +22,10 @@
              
             // set the resulting array to associative
             $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-            foreach(new Events(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
+            foreach(new RecursiveArrayIterator($stmt->fetchAll()) as $it) {
                 $conn = true;
-              echo $v;
+                $ev = new Events($it);
+                echo $ev->info();
             }
          } catch(PDOException $e) {
              $conn = true;
