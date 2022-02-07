@@ -1,5 +1,5 @@
 <?php
-include("container.php");
+include_once("container.php");
 class Events extends Container {
     private static int $id = 0;
     function __construct($it) {
