@@ -1,13 +1,13 @@
 <?php
 include_once("container.php");
 class Events extends Container {
-    private static int $id = 0;
+    private int $id = 0;
     function __construct($it) {
         parent::__construct($it);
     }
 
     function info(): string {
-        return "<div class=\"event\" id=\"event-" . Events::$id++ . "\">
+        return "<div class=\"event\" id=\"event-" . ($this->id = parent::getArray()["ID"]) . "\">
         <header class=\"event-header\">
         <h3 class=\"event-title\">" . parent::getArray()["EventTitle"] . "</h3>\n
         <div class=\"date-location\">
