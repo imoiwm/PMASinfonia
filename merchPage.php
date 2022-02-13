@@ -2,19 +2,16 @@
 <html lang="en-US">
     <head>
         <title>Merch Page</title>
-        <!--<link rel="stylesheet" type="text/css" href="calendar.css">-->
+        <link rel="stylesheet" type="text/css" href="normalize.css">
     </head>
     <body id="merch-body">
         <?php
          echo   "<div class=\"merch-collection\">";
          include("merchandise.php");
-         $server = "localhost";
-         $database = "web_dev";
-         $username = "prog";
-         $password = "1035Fox!";
+         include_once("defined.php");
          $conn = false;
          try {
-           $test = new PDO("mysql:host=$server;dbname=$database", $username, $password);
+            $test = new PDO("mysql:host=" . SERVER_NAME . ";dbname=" . DATABASE_NAME, USERNAME, PASSWORD);
            // set the PDO error mode to exception
            $test->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
            $stmt = $test->prepare("CALL getMerch();");
