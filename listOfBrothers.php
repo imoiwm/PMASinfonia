@@ -29,6 +29,7 @@
            echo "<h1><b>Connection failed:</b></h1>\n<p>Sorry, we could not connect with the server.
             Try again in a few hours.</p>" /*. $e->getMessage()*/;
          }
+         $stmt->closeCursor();
          if (!$conn) {
              echo "<p>There are currently no upcoming brothers yet.</p>";
          }

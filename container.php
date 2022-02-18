@@ -15,6 +15,10 @@ abstract class Container {
         }
         return "img/no_img.png";
     }
+
+    function getID(): int {
+        return (in_array("ID", array_keys($this->ar))) ? $this->ar["ID"] : -1;
+    }
           
     abstract function info(): string;
 }

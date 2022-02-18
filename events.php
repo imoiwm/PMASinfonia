@@ -12,7 +12,7 @@ class Events extends Container {
         <h3 class=\"event-title\">" . parent::getArray()["EventTitle"] . "</h3>\n
         <div class=\"date-location\">
         <p class=\"event-date\">" . parent::getArray()["EventDay"] . "</p>\n
-        <p class=\"event-location\">" . parent::getArray()["EventLocation"] . "</p>
+        <address class=\"event-location\">" . parent::getArray()["EventLocation"] . "</address>
         \n</div>
         \n</header>
         \n<p class=\"event-description\">" . parent::getArray()["EventDescription"] . "</p>

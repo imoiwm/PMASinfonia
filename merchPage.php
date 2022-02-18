@@ -24,6 +24,7 @@
                 $ev = new Merchandise($it);
                 echo $ev->info();
             }
+            $stmt->closeCursor();
          } catch(PDOException $e) {
              $conn = true;
            echo "<h1><b>Connection failed:</b></h1>\n<p>Sorry, we could not connect with the server.
