@@ -1,6 +1,12 @@
 DIR = /c/xampp/htdocs/web_prog/
 
-all: 	calendar merchPage listOfBrothers
+all: 	calendar merchPage listOfBrothers brother login
+
+login:
+	cp login.html $(DIR)
+
+brother: brothers normalize defined
+	cp brother.php $(DIR)
 
 calendar : events normalize defined
 	cp calendar.php $(DIR)
