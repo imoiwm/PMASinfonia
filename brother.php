@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <?php 
-if (!in_array("user", array_keys($_POST)) || !in_array("pass", array_keys($_POST))) {
-    header("Location: login.html");
-    exit();
-}
 session_start();
-$_SESSION["User"] = $_POST["user"];
-$_SESSION["Pass"] = $_POST["pass"];
-setcookie("Test", 100, 3600);
+$initialized = false;
+if (!isset($_POST["user"]) || !isset($_POST["pass"])) {
+    if (!isset($_SESSION["User"]) || !isset($_SESSION["Pass"])) {
+        header("Location: login.html");
+        exit();
+    } else {
+        $initialized = true;
+    }
+}
+if (!$initialized) {
+    $_SESSION["User"] = $_POST["user"];
+    $_SESSION["Pass"] = $_POST["pass"];
+}
 ?>
 <html>
     <head>
         <title>Profile</title>
+        <link rel="stylesheet" type="text/css" href="normalize.css">
     </head>
     <body>
         <?php
@@ -22,7 +29,11 @@ setcookie("Test", 100, 3600);
             $test = new PDO("mysql:host=" . SERVER_NAME . ";dbname=" . DATABASE_NAME, USERNAME, PASSWORD);
            // set the PDO error mode to exception
            $test->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-           $stmt = $test->prepare("CALL getBrothers();");
+           $stmt = $test->prepare("CALL getBrother(:u, :p);");
+           $stmt->bindParam(":u", $username);
+           $stmt->bindParam(":p", $password);
+           $username = htmlspecialchars($_SESSION["User"]);
+           $password = htmlspecialchars($_SESSION["Pass"]);
             $stmt->execute();
              
             // set the resulting array to associative
@@ -30,7 +41,8 @@ setcookie("Test", 100, 3600);
             foreach(new RecursiveArrayIterator($stmt->fetchAll()) as $it) {
                 $conn = true;
                 $ev = new Brothers($it);
-                echo $ev->info();
+                echo $ev->maxInfo();
+                $_SESSION["ID"] = $ev->getID();
             }
          } catch(PDOException $e) {
              $conn = true;
@@ -40,9 +52,6 @@ setcookie("Test", 100, 3600);
          $stmt->closeCursor();
          if (!$conn) {
              echo "<p>There are currently no upcoming brothers yet.</p>";
-         }
-         if (isset($_COOKIE["Test"])) {
-             echo "Test cookie " . $_COOKIE["Test"] . " worked";
          }
          echo "</div>";
         ?>
