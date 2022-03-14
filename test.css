@@ -1,0 +1,76 @@
+* {
+    font-family: 'Open Sans';
+    font-style: normal;
+}
+
+body {
+    background-color: #FEFEFE;
+    margin: 0px;
+}
+
+/* Header */
+header {
+    height: 7.6419%;
+    background: #CC0000;
+    display: flex;
+    justify-content: space-between;    
+    align-items: center;
+}
+
+/* Footer */
+footer {
+    height: 9.607%;
+    background: #282A2B;
+}
+
+/* Copyright © 2020 Phi Mu Alpha Sinfonia Fraternity of America | All Rights Reserved */
+#copyright {
+    height: 40px;
+    /*left: 12px;
+    top: 419px;*/
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #A9A8A8;
+}
+
+.nav-buttons {
+background-color: #333333;
+box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25), inset -4px -4px 10px -3px rgba(235, 234, 234, 0.35);
+/* Font */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+align-items: center;
+text-align: center;
+text-decoration: none;
+
+color: #FFFFFF;
+padding: 3.5% 10px 2.7% 10px;
+}
+
+a.nav-buttons:hover {
+    background-color: #CC0000;
+}
+
+/* PMU Logo */
+.logo {
+    width: 162.31px;
+    height: 33px;
+}
+
+nav {
+    display: block;
+}
+
+ul.nav-list {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+li.nav-list {
+    display: inline;
+}
