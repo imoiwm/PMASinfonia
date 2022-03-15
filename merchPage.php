@@ -8,10 +8,10 @@
         <?php
          echo   "<div class=\"merch-collection\">";
          include("merchandise.php");
-         include_once("defined.php");
+         include_once("private/defined.php");
          $conn = false;
          try {
-            $test = new PDO("mysql:host=" . SERVER_NAME . ";dbname=" . DATABASE_NAME, USERNAME, PASSWORD);
+            if ($test === null) exit();
            // set the PDO error mode to exception
            $test->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
            $stmt = $test->prepare("CALL getMerch();");
