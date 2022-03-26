@@ -4,6 +4,7 @@ class Brothers extends Container {
     private int $id = 0;
     function __construct($it) {
         parent::__construct($it);
+        $this->id = $it["ID"];
     }
 
     function getID(): int {

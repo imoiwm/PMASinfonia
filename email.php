@@ -1,10 +1,11 @@
 <?php
-/*if (!isset($_POST["submit"]) || !isset($_POST["user"])) {
+function d() {};
+d();
+if (!isset($_POST["submit"]) || !isset($_POST["user"])) {
     header("Location: login.html");
     exit();
 }
-$user=$_POST["user"];*/
-$user = "Qa12";
+$user=$_POST["user"];
 require_once("private/defined.php");
 require_once("encrypt.php");
 $conn = false;
@@ -17,7 +18,7 @@ try {
     $stmt->bindParam(":u", $username);
     $stmt->bindParam(":p", $password);
     $username = htmlspecialchars($user);
-    $password = htmlspecialchars(encrypt("123EasyStreet!Awesome", $user));
+    $password = htmlspecialchars(encrypt(htmlspecialchars("123EasyStreet!Awesome"), htmlspecialchars($user)));
     $stmt->execute();
     
     // set the resulting array to associative

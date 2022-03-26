@@ -13,7 +13,7 @@ if (!isset($_POST["user"]) || !isset($_POST["pass"])) {
 include_once("encrypt.php");
 if (!$initialized) {
     $_SESSION["User"] = $_POST["user"];
-    $_SESSION["Pass"] = encrypt(htmlspecialchars($_POST["pass"]), htmlspecialchars($_POST["user"]));
+    $_SESSION["Pass"] = htmlspecialchars($_POST["pass"]);
 }
 ?>
 <html>
@@ -30,11 +30,9 @@ if (!$initialized) {
             if ($test === null) exit();
            // set the PDO error mode to exception
            $test->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-           $stmt = $test->prepare("CALL getBrother(:u, :p);");
+           $stmt = $test->prepare("CALL getBrother(:u);");
            $stmt->bindParam(":u", $username);
-           $stmt->bindParam(":p", $password);
            $username = htmlspecialchars($_SESSION["User"]);
-           $password = htmlspecialchars($_SESSION["Pass"]);
             $stmt->execute();
              
             // set the resulting array to associative
@@ -42,8 +40,15 @@ if (!$initialized) {
             foreach(new RecursiveArrayIterator($stmt->fetchAll()) as $it) {
                 $conn = true;
                 $ev = new Brothers($it);
-                echo $ev->maxInfo();
                 $_SESSION["ID"] = $ev->getID();
+                $str = ($initialized) ? $it["Password"] : decrypt(htmlspecialchars($it["Password"]), htmlspecialchars($_SESSION["User"]));
+                if (strcmp($_SESSION["Pass"], $str) == 0) {
+                    $_SESSION["Pass"] = htmlspecialchars($it["Password"]);
+                } else {
+                    header("Location: login.html");
+                    exit();
+                }
+                echo $ev->maxInfo();
             }
          } catch(PDOException $e) {
              $conn = true;
