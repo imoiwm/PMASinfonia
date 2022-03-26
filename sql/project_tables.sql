@@ -22,7 +22,7 @@ BrotherBio TEXT comment "The description brothers can put about themselves (not 
 UserName varchar(256) not null unique comment "Username (can be encrypted, but not necessary)",
 BrotherPassword varchar(256) not null comment "Brother password (should be encrypted BEFORE sending to database",
 BrotherPicture varchar(256) comment "Picture of the brother (not required)",
-Email varchar(50) comment "Email for the given brother (not required)",
+Email varchar(50) NOT NULL DEFAULT " " comment "Email for the given brother",
 primary key(BrotherID)
 ) comment "Table of Brothers for the fraternity";
 CREATE TABLE comments (

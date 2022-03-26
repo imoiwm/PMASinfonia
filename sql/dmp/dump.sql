@@ -30,7 +30,7 @@ CREATE TABLE `brothers` (
   `UserName` varchar(256) NOT NULL,
   `BrotherPassword` varchar(256) NOT NULL,
   `BrotherPicture` varchar(256) DEFAULT NULL,
-  `Email` varchar(50) DEFAULT NULL,
+  `Email` varchar(50) NOT NULL DEFAULT ' ' COMMENT 'Email for the given brother',
   PRIMARY KEY (`BrotherID`),
   UNIQUE KEY `BrotherID` (`BrotherID`),
   UNIQUE KEY `UserName` (`UserName`)
@@ -43,7 +43,7 @@ CREATE TABLE `brothers` (
 
 LOCK TABLES `brothers` WRITE;
 /*!40000 ALTER TABLE `brothers` DISABLE KEYS */;
-INSERT INTO `brothers` VALUES (1,'Jack','Moro','OK Now the hottest bro out there','jackly','password',NULL,NULL),(2,'Justin','Moon',NULL,'qa112','1Luckydog!',NULL,NULL),(4,'Justin','Moon',NULL,'Qa12','1Luckydog!!!!!!',NULL,NULL);
+INSERT INTO `brothers` VALUES (1,'Jack','Moro','OK Now the hottest bro out there','jackly','password',NULL,' '),(2,'Justin','Moon',NULL,'qa112','1Luckydog!!!!!!',NULL,'jtm08993@uga.edu'),(4,'Justin','Moon','Hello World!!! Now','Qa12','VSuodH5K1DO1fN4k+m1PbUJWosIIebBg6cUeyOEUH1/Q/ZeaLpdvprk/YqAv/Rsc','img/uploads/1615649886510.jpg','jtm08993@uga.edu');
 /*!40000 ALTER TABLE `brothers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -140,4 +140,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-03 15:26:23
+-- Dump completed on 2022-03-26 11:23:43

@@ -93,28 +93,25 @@ CREATE PROCEDURE updateBrotherEmail(IN eml varchar(50), IN id INT UNSIGNED, IN u
     UPDATE brothers SET Email = eml WHERE id = BrotherID AND uName = UserName AND pass = BrotherPassword;
     END $$
 DELIMITER $$
-CREATE PROCEDURE updateBrotherPassword(IN uName varchar(256), IN pass varchar(256), OUT eml varchar(50)) COMMENT "
+CREATE PROCEDURE updateBrotherPassword(IN uName varchar(256), IN pass varchar(256)) COMMENT "
 --Description: updates the password of a brother.
 --Tables: Brother
 --Parameters:
-	[eml]=The email to give
-    [id]=The id of the brother
     [uName]=The username of the brother to verify the change
-    [pass]=The encrypted password of the brother to verify the change
+    [pass]=The encrypted password of the brother to change
 --Returns: none."
 	BEGIN
     DECLARE x varchar(50);
     SET x = IFNULL((SELECT Email FROM brothers WHERE uName = UserName LIMIT 1), "No Email"); # Should not require the limit of 1 since username is unique
 	UPDATE brothers SET BrotherPassword = pass WHERE uName = UserName AND Email = x;
-	SET eml = x;
+    SELECT x AS email;
     END $$
 DELIMITER $$
-CREATE PROCEDURE getBrother(IN u varchar(256), IN pass varchar(256)) COMMENT "
+CREATE PROCEDURE getBrother(IN u varchar(256)) COMMENT "
 --Description: gets the information of one brother.
 --Tables: Brother
 --Parameters: 
 	[u]=The username of a brother in the table
-    [pass]=The password of a brother in the table
 --Returns: Query of the bio of a brother:
 	[ID]=BrotherID
     [FirstName]
@@ -123,6 +120,6 @@ CREATE PROCEDURE getBrother(IN u varchar(256), IN pass varchar(256)) COMMENT "
     [Picture]=BrotherPicture or 'no img' if null
     [Email]=Email or empty if null"
 	BEGIN
-    SELECT BrotherID AS ID, FirstName, LastName, IFNULL(BrotherBio, "") AS Bio, IFNULL(BrotherPicture, "no img") AS Picture, IFNULL(Email, "") AS Email FROM brothers WHERE u = brothers.UserName AND brothers.BrotherPassword = pass;
+    SELECT BrotherID AS ID, FirstName, LastName, IFNULL(BrotherBio, "") AS Bio, IFNULL(BrotherPicture, "no img") AS Picture, IFNULL(Email, "") AS Email, BrotherPassword AS `Password` FROM brothers WHERE u = brothers.UserName;
     END $$
 DROP PROCEDURE getBrother;
