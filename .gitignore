@@ -2,3 +2,5 @@
 .vscode/
 img/uploads
 private/
+vendor/
+composer.*

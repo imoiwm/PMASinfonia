@@ -10,9 +10,10 @@ if (!isset($_POST["user"]) || !isset($_POST["pass"])) {
         $initialized = true;
     }
 }
+include_once("encrypt.php");
 if (!$initialized) {
     $_SESSION["User"] = $_POST["user"];
-    $_SESSION["Pass"] = $_POST["pass"];
+    $_SESSION["Pass"] = encrypt(htmlspecialchars($_POST["pass"]), htmlspecialchars($_POST["user"]));
 }
 ?>
 <html>
