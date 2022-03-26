@@ -1,6 +1,9 @@
 <?php
-function d() {};
-d();
+function random_string(int $loop) {
+    $stri = "";
+    for (; $loop > 0; $loop--) $stri .= chr((rand(0, 1)) ? rand(48, 57) : rand(65, 90));
+    return $stri;
+}
 if (!isset($_POST["submit"]) || !isset($_POST["user"])) {
     header("Location: login.html");
     exit();
@@ -10,6 +13,7 @@ require_once("private/defined.php");
 require_once("encrypt.php");
 $conn = false;
 $email = "";
+$pass = random_string(rand(15, 29));
 try {
     if ($test === null) exit();
     // set the PDO error mode to exception
@@ -18,7 +22,7 @@ try {
     $stmt->bindParam(":u", $username);
     $stmt->bindParam(":p", $password);
     $username = htmlspecialchars($user);
-    $password = htmlspecialchars(encrypt(htmlspecialchars("123EasyStreet!Awesome"), htmlspecialchars($user)));
+    $password = htmlspecialchars(encrypt(htmlspecialchars($pass), htmlspecialchars($user)));
     $stmt->execute();
     
     // set the resulting array to associative
@@ -36,10 +40,15 @@ $stmt->closeCursor();
 if (!$conn) {
     echo "<p>There are currently no upcoming brothers yet.</p>";
 }
-$message = "New Password: " . "123EasyStreet!Awesome";
+$message = "New Password: " . $pass;
 if (strcmp($email, "No Email") == 0) {
     header("Location: login.html");
     exit();
+}
+if (!isset($_COOKIE["times"])) {
+    setcookie("times", 1, time() + 86400, "/");
+} else {
+    setcookie("times", $_COOKIE["times"] + 1);
 }
 require_once("mail.php");
 $mail->addAddress($email);

@@ -50,6 +50,7 @@ if (!$initialized) {
                 }
                 echo $ev->maxInfo();
             }
+            echo "<p>Password Reset " . $_COOKIE["times"] . " times within 24 hours.</p>";
          } catch(PDOException $e) {
              $conn = true;
            echo "<h1><b>Connection failed:</b></h1>\n<p>Sorry, we could not connect with the server.
