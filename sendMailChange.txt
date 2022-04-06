@@ -1,0 +1,9 @@
+smtp_server=smtp.gmail.com
+smtp_port=465
+error_logfile=error.log
+debug_logfile=debug.log
+auth_username=throwaway9134098@gmail.com
+auth_password=1Luckaydawgs
+force_sender=throwaway9134098@gmail.com
+; throwaway9134098@gmail.com has to have less secure apps allowed enabled to work. This is a hack, but it works
+; this is all that needs to be in sendmail.ini

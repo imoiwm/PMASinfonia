@@ -1,0 +1,50 @@
+* {
+    box-sizing:border-box;
+}
+
+#calendar-body {
+    background-color: rgb(179, 179, 179);
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.event {
+    background-color: rgb(243, 243, 243);
+    border-width:1px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);;
+    margin: 5px;
+    padding: 20px;
+    row-gap: 1px;
+    max-height:600px;
+}
+
+.event-location, .event-date {
+    margin:0px;
+    padding:0px;
+    text-align:center;
+}
+
+.event-description {
+    margin: 2px;
+    height:60%;
+    padding: 10px;
+}
+
+.event-header {
+    margin: 5px;
+    height:30%;
+    padding: 6%;
+}
+
+.event-title {
+    float:left;
+    padding:0px;
+    margin:0px;
+}
+
+.date-location {
+    float:right;
+    padding:0px;
+    margin:0px;
+}

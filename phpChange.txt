@@ -1,0 +1,10 @@
+extension=openssl
+
+extension=php_openssl.dll
+
+SMTP=ssl://smtp.gmail.com
+smtp_port=465
+sendmail_from=throwaway9134098@gmail.com
+sendmail_path="C:\xampp\sendmail\sendmail.exe -t"
+; this needs to be swapped
+; read this for more: https://stackoverflow.com/questions/21836282/php-function-mail-isnt-working
