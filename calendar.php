@@ -2,13 +2,13 @@
 <html lang="en-US">
     <head>
         <title>Calendar</title>
-        <link rel="stylesheet" type="text/css" href="normalize.css">
-        <link rel="stylesheet" type="text/css" href="calendar.css">
+        <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+        <link rel="stylesheet" type="text/css" href="styles/calendar.css">
     </head>
     <body id="calendar-body">
         <?php
          echo   "<div class=\"events-collection\">";
-         include("events.php");
+         include("containers/events.php");
          include_once("private/defined.php");
          $conn = false;
          try {

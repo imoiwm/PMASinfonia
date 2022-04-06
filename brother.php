@@ -10,7 +10,7 @@ if (!isset($_POST["user"]) || !isset($_POST["pass"])) {
         $initialized = true;
     }
 }
-include_once("encrypt.php");
+include_once("processes/encrypt.php");
 if (!$initialized) {
     $_SESSION["User"] = $_POST["user"];
     $_SESSION["Pass"] = htmlspecialchars($_POST["pass"]);
@@ -19,11 +19,11 @@ if (!$initialized) {
 <html>
     <head>
         <title>Profile</title>
-        <link rel="stylesheet" type="text/css" href="normalize.css">
+        <link rel="stylesheet" type="text/css" href="styles/normalize.css">
     </head>
     <body>
         <?php
-        include("brothers.php");
+        include("containers/brothers.php");
         include_once("private/defined.php");
          $conn = false;
          try {

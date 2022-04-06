@@ -2,12 +2,12 @@
 <html lang="en-US">
     <head>
         <title>Calendar</title>
-        <link rel="stylesheet" type="text/css" href="normalize.css">
+        <link rel="stylesheet" type="text/css" href="styles/normalize.css">
     </head>
     <body id="calendar-body">
         <?php
          echo   "<div class=\"brothers-collection\">";
-         include("brothers.php");
+         include("containers/brothers.php");
          include_once("private/defined.php");
          $conn = false;
          try {

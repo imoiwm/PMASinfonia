@@ -2,12 +2,12 @@
 <html lang="en-US">
     <head>
         <title>Merch Page</title>
-        <link rel="stylesheet" type="text/css" href="normalize.css">
+        <link rel="stylesheet" type="text/css" href="styles/normalize.css">
     </head>
     <body id="merch-body">
         <?php
          echo   "<div class=\"merch-collection\">";
-         include("merchandise.php");
+         include("containers/merchandise.php");
          include_once("private/defined.php");
          $conn = false;
          try {
