@@ -19,7 +19,10 @@ header {
 
 /* Footer */
 footer {
-    height: 9.607%;
+    position: absolute;
+    bottom: 0%;
+    /* height: 9.607%; */
+    width: 100%;
     background: #282A2B;
 }
 
