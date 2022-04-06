@@ -1,12 +1,14 @@
 <!DOCTYPE html>
+<?php require_once("template.php"); ?>
 <html lang="en-US">
     <head>
         <title>Calendar</title>
-        <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+        <?php cssFile(); ?>
         <link rel="stylesheet" type="text/css" href="styles/calendar.css">
     </head>
     <body id="calendar-body">
         <?php
+         head();
          echo   "<div class=\"events-collection\">";
          include("containers/events.php");
          include_once("private/defined.php");
@@ -35,6 +37,7 @@
              echo "<p>There are currently no upcoming events yet.</p>";
          }
          echo "</div>";
+         foot();
         ?>
     </body>
 </html>

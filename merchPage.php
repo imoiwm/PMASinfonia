@@ -1,11 +1,13 @@
 <!DOCTYPE html>
+<?php require_once("template.php"); ?>
 <html lang="en-US">
     <head>
         <title>Merch Page</title>
-        <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+        <?php cssFile(); ?>
     </head>
     <body id="merch-body">
         <?php
+         head();
          echo   "<div class=\"merch-collection\">";
          include("containers/merchandise.php");
          include_once("private/defined.php");
@@ -34,6 +36,7 @@
              echo "<p>There are currently no upcoming events yet.</p>";
          }
          echo "</div>";
+         foot();
         ?>
     </body>
 </html>

@@ -11,6 +11,7 @@ if (!isset($_POST["user"]) || !isset($_POST["pass"])) {
     }
 }
 include_once("processes/encrypt.php");
+require_once("template.php");
 if (!$initialized) {
     $_SESSION["User"] = $_POST["user"];
     $_SESSION["Pass"] = htmlspecialchars($_POST["pass"]);
@@ -19,12 +20,13 @@ if (!$initialized) {
 <html>
     <head>
         <title>Profile</title>
-        <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+        <?php cssFile(); ?>
     </head>
     <body>
         <?php
         include("containers/brothers.php");
         include_once("private/defined.php");
+        head();
          $conn = false;
          try {
             if ($test === null) exit();
@@ -61,6 +63,7 @@ if (!$initialized) {
              echo "<p>There are currently no upcoming brothers yet.</p>";
          }
          echo "</div>";
+         foot();
         ?>
     </body>
 </html>

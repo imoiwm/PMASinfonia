@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+<?php require_once("template.php") ?>
 <html lang="en-US">
     <head>
         <title>Login</title>
         <link rel="stylesheet" type="text/css" href="styles/normalize.css">
     </head>
     <body>
+        <?php head(); ?>
         <form method="post" action="brother.php">
             <label for="user">Username:</label>
             <input type="text" id="user" name="user" maxlength="255" autofocus required><label for="user" class="desc">Must be 15-30 characters in length</label><br/>
@@ -18,5 +20,6 @@
             <input type="text" id="usern" name="user" maxlength="255" required> |
             <input type="submit" id="submit-button2" name="submit" value="Reset Password">
         </form>
+        <?php foot(); ?>
     </body>
 </html>

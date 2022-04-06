@@ -1,18 +1,18 @@
 <?php
 
 function head(): void {
-    echo '<header>
+    echo '<header id="global-head">
             <a href="">
                 <img class="logo" src="img/logo.png">
             </a>
             <nav >
                 <ul class="nav-list">
                     <!--The format is very important to enure there are no spaces between items-->
-                    <li class="nav-list"><a href="" class="nav-buttons"> Merch </a></li
-                    ><li class="nav-list"><a href="" class="nav-buttons"> Brothers </a></li
-                    ><li class="nav-list"><a href="" class="nav-buttons"> Calendar </a></li
+                    <li class="nav-list"><a href="merchPage.php" class="nav-buttons"> Merch </a></li
+                    ><li class="nav-list"><a href="listOfBrothers.php" class="nav-buttons"> Brothers </a></li
+                    ><li class="nav-list"><a href="calendar.php" class="nav-buttons"> Calendar </a></li
                     ><li class="nav-list"><a href="" class="nav-buttons"> Contact </a></li
-                    ><li class="nav-list"><a href="" class="nav-buttons"> Log in </a></li
+                    ><li class="nav-list"><a href="login.php" class="nav-buttons"> Log in </a></li
                     ><li class="nav-list"><a href="" class="nav-buttons"> History </a></li
                     ><li class="nav-list"><a href="" class="nav-buttons"> About </a></li>
                 </ul>
@@ -27,6 +27,6 @@ function foot(): void {
 }
 
 function cssFile(): void {
-    echo '<link rel="stylesheet" type="text/css" href="test.css">';
+    echo '<link rel="stylesheet" type="text/css" href="styles/test.css">';
 }
 ?>

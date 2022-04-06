@@ -9,7 +9,7 @@ body {
 }
 
 /* Header */
-header {
+header#global-head {
     height: 7.6419%;
     background: #CC0000;
     display: flex;
@@ -19,8 +19,8 @@ header {
 
 /* Footer */
 footer {
-    position: absolute;
-    bottom: 0%;
+    /*position: absolute;
+    bottom: 0%; this did not work exactly*/
     /* height: 9.607%; */
     width: 100%;
     background: #282A2B;
