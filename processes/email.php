@@ -5,11 +5,11 @@ function random_string(int $loop) {
     return $stri;
 }
 if (!isset($_POST["submit"]) || !isset($_POST["user"])) {
-    header("Location: login.html");
+    header("Location: ../login.html");
     exit();
 }
 $user=$_POST["user"];
-require_once("private/defined.php");
+require_once("../private/defined.php");
 require_once("encrypt.php");
 $conn = false;
 $email = "";
@@ -62,6 +62,6 @@ try {
 } catch (Exception $e) {
     $er = "Mailer Error: " . $mail->ErrorInfo;
 }
-header("Location: login.html");
+header("Location: ../login.html");
 die($er);
 ?>

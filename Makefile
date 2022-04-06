@@ -6,5 +6,4 @@ calendar:
 	cp -r * $(DIR)
 
 clean:
-	rm -f $(DIR)*.php
-	rm -f $(DIR)*.css
+	rm -rf $(DIR)*

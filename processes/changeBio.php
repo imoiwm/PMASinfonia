@@ -7,7 +7,7 @@ if (!isset($_SESSION["User"]) || !isset($_SESSION["Pass"])
     exit();
 }
 
-include_once("private/defined.php");
+include_once("../private/defined.php");
 
 $conn = false;
 try {
@@ -25,7 +25,7 @@ try {
     $username = htmlspecialchars($_SESSION["User"]);
     $password = htmlspecialchars($_SESSION["Pass"]);
     $stmt->execute();
-    header("Location: brother.php");
+    header("Location: ../brother.php");
     exit();
 } catch(PDOException $e) {
     $conn = true;

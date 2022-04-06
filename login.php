@@ -2,7 +2,7 @@
 <html lang="en-US">
     <head>
         <title>Login</title>
-        <link rel="stylesheet" type="text/css" href="normalize.css">
+        <link rel="stylesheet" type="text/css" href="styles/normalize.css">
     </head>
     <body>
         <form method="post" action="brother.php">
@@ -13,7 +13,7 @@
             <input type="submit" id="submit-button" name="submit" value="Submit">
         </form>
         <p>Can't Remember Your Password:</p>
-        <form method="post" action="email.php">
+        <form method="post" action="processes/email.php">
             <label for="usern">Username: </label>
             <input type="text" id="usern" name="user" maxlength="255" required> |
             <input type="submit" id="submit-button2" name="submit" value="Reset Password">

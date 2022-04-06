@@ -28,12 +28,12 @@ class Brothers extends Container {
         <h3 class="brother-name">' . $fullName . '</h3>
         </header>
         <img class="brother-picture" src="' . parent::checkPicture(parent::getArray()["Picture"]) . '" alt="' . $fullName . '\'s picture"/>
-        <form action="changePicture.php" method="post" enctype="multipart/form-data">
+        <form action="processes/changePicture.php" method="post" enctype="multipart/form-data">
         <label for="image">Select image to upload:</label>
         <input type="file" name="image" id="image">
         <input type="submit" value="Upload Image">
         </form>
-        <form action="changeEmail.php" method="post">
+        <form action="processes/changeEmail.php" method="post">
         <input type="hidden" id="id" name="id" value="' . $this->id . '">
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" placeholder="no email entered" value="' . htmlspecialchars(parent::getArray()["Email"]) . '" pattern="
@@ -44,7 +44,7 @@ class Brothers extends Container {
         <input type="submit" value="Change Email">
         </form>
         <br>
-        <form action="changeBio.php" method="post">
+        <form action="processes/changeBio.php" method="post">
         <label for="bio">About Me:</label>
         <textarea id="bio" name="bio" placeholder="no description"  maxlength="2000" required>'
         . htmlspecialchars(parent::getArray()["Bio"]) .
