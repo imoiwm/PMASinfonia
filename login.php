@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<?php require_once("template.php") ?>
+<?php 
+if (isset($_SESSION["User"]) && isset($_SESSION["Pass"])) {
+    header("Location: brother.php");
+    exit();
+}
+require_once("template.php")
+?>
 <html lang="en-US">
     <head>
         <title>Login</title>
-        <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+        <?php headInfo("Login", "Login, Log in, Logon, Log on", []); ?>
     </head>
     <body>
         <?php head(); ?>

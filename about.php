@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<?php include_once("template.php"); ?>
+<?php require_once("template.php"); ?>
 <html>
     <head>
-        <title>Test</title>
-        <?php cssFile(); ?>
+        <title>About Us</title>
+        <?php headInfo("Aubout Us", "About, About Us", []); ?>
     </head>
     <body>
         <?php head(); ?>

@@ -2,8 +2,8 @@
 
 function head(): void {
     echo '<header id="global-head">
-            <a href="">
-                <img class="logo" src="img/logo.png">
+            <a href="about.php">
+                <img class="logo" src="img/logo.png" alt="Phi Mu Alpha Sinfonia Logo">
             </a>
             <nav >
                 <ul class="nav-list">
@@ -11,10 +11,10 @@ function head(): void {
                     <li class="nav-list"><a href="merchPage.php" class="nav-buttons"> Merch </a></li
                     ><li class="nav-list"><a href="listOfBrothers.php" class="nav-buttons"> Brothers </a></li
                     ><li class="nav-list"><a href="calendar.php" class="nav-buttons"> Calendar </a></li
-                    ><li class="nav-list"><a href="" class="nav-buttons"> Contact </a></li
+                    ><li class="nav-list"><a href="contact.php" class="nav-buttons"> Contact </a></li
                     ><li class="nav-list"><a href="login.php" class="nav-buttons"> Log in </a></li
-                    ><li class="nav-list"><a href="" class="nav-buttons"> History </a></li
-                    ><li class="nav-list"><a href="" class="nav-buttons"> About </a></li>
+                    ><li class="nav-list"><a href="history.php" class="nav-buttons"> History </a></li
+                    ><li class="nav-list"><a href="about.php" class="nav-buttons"> About </a></li>
                 </ul>
             </nav>
         </header>';
@@ -26,7 +26,30 @@ function foot(): void {
     </footer>';
 }
 
-function cssFile(): void {
-    echo '<link rel="stylesheet" type="text/css" href="styles/test.css">';
+function cssFile(string $fileName = "test"): void {
+    echo '<link rel="stylesheet" type="text/css" href="styles/' . $fileName . '.css">';
+}
+
+function favicon(): void {
+    echo '<link rel="icon" type="image/x-icon" href="img/favicon.ico">';
+}
+
+function meta(string $description = "Phi Mu Alpha Sinfonia Page", 
+    string $keywords = "PMA Sinfonia UGA, UGA Chapter, Phi Mu Alpha Sinfonia UGA"): void {
+    echo '<meta charset="UTF-8">
+        <meta name="description" content="' . $description . '">
+        <meta name="keywords" content="' . $keywords . '">
+        <meta name="author" content="Justin Moon, Ivan Mo, Colin Jinks, Nathan Jacobi, Will Gautreaux">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">';
+}
+
+function headInfo(string $description, string $keywords, array $cssFiles = []): void {
+    meta("Phi Mu Alpha Sinfonia UGA Chapter $description Page", "PMA Sinfonia UGA, UGA Chapter, Phi Mu Alpha Sinfonia UGA, " . $keywords);
+    favicon();
+    cssFile("normalize");
+    cssFile();
+    foreach($cssFiles as $file) {
+        cssFile($file);
+    }
 }
 ?>

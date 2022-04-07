@@ -4,7 +4,7 @@ session_start();
 $initialized = false;
 if (!isset($_POST["user"]) || !isset($_POST["pass"])) {
     if (!isset($_SESSION["User"]) || !isset($_SESSION["Pass"])) {
-        header("Location: login.html");
+        header("Location: login.php");
         exit();
     } else {
         $initialized = true;
@@ -20,7 +20,7 @@ if (!$initialized) {
 <html>
     <head>
         <title>Profile</title>
-        <?php cssFile(); ?>
+        <?php headInfo("Profile", "Profile, View Profile", []); ?>
     </head>
     <body>
         <?php

@@ -3,7 +3,7 @@
 <html lang="en-US">
     <head>
         <title>Brothers</title>
-        <?php cssFile(); ?>
+        <?php headInfo("Brothers", "Brothers, Brothers List, List of Brothers", []); ?>
     </head>
     <body id="calendar-body">
         <?php

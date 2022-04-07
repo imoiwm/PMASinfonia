@@ -3,8 +3,7 @@
 <html lang="en-US">
     <head>
         <title>Calendar</title>
-        <?php cssFile(); ?>
-        <link rel="stylesheet" type="text/css" href="styles/calendar.css">
+        <?php headInfo("Calendar", "Calendar, Events", ["calendar"]); ?>
     </head>
     <body id="calendar-body">
         <?php
