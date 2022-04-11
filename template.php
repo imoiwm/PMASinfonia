@@ -26,7 +26,7 @@ function foot(): void {
     </footer>';
 }
 
-function cssFile(string $fileName = "test"): void {
+function cssFile(string $fileName = "global"): void {
     echo '<link rel="stylesheet" type="text/css" href="styles/' . $fileName . '.css">';
 }
 
