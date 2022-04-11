@@ -28,8 +28,6 @@ label#userLabel {
     width: 104px;
     height: 28px;
 
-    font-family: 'Roboto';
-    font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
@@ -46,8 +44,6 @@ label#passLabel {
     width: 104px;
     height: 28px;
 
-    font-family: 'Roboto';
-    font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
@@ -64,8 +60,6 @@ input#user {
     width: 147px;
     height: 22px;
 
-    font-family: 'Roboto';
-    font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
@@ -82,8 +76,6 @@ input#pass {
     width: 147px;
     height: 22px;
 
-    font-family: 'Roboto';
-    font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
@@ -100,21 +92,25 @@ input#submit-button {
     margin: auto;
     width: 117px;
     height: 30px;
-    font-family: 'Roboto';
-    font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
     display: block;
     align-items: center;
     text-align: center;
-
+    
+    transition: 300ms;
     color: #282A2B;
     background-color: #FEFEFE;
     border-width: thin;
     border-radius: 18px;
 }
 
+input#submit-button:hover {
+    transition: 300ms;
+    color: #FEFEFE;
+    background-color: #CC0000;
+}
 
 /* sinfonia_img_login */
 img#bigLogo {
