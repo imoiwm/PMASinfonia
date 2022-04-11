@@ -3,7 +3,7 @@
 <html lang="en-US">
     <head>
         <title>Merch Page</title>
-        <?php headInfo("Merchandise", "Merch, Products", [merch.css]); ?>
+        <?php headInfo("Merchandise", "Merch, Products", ["merch"]); ?>
     </head>
     <body id="merch-body">
         <?php
