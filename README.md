@@ -1,13 +1,19 @@
-# PMASinfonia
-Website for the UGA chapter of Phi Mu Alpha Sinfonia. Alternatively, completed as a Web Development (CSCI4300) project.
+## PMASinfonia
+__Website for the UGA chapter of Phi Mu Alpha Sinfonia. Alternatively, completed as a Web Development (CSCI4300) project.__
+
+---------------------------------
+
 In order for email to work, Download PHPMailer, Using Composer (composer require phpmailer/phpmailer).
-The login has an reset password that changes the password to a random string and sends it via email.
-Use updateBrotherEmail() or plain MYSQL code to change the email to the desired email address.
-Update php.ini and sendmail.ini to the specified values in their respective change files.
-The img directory must be exactly the same in the htdocs page (php needs images in relative path).
-For defined.php:
-put it in private/,
-copy this:
+ - The login has an reset password that changes the password to a random string and sends it via email.
+ - Use updateBrotherEmail() or plain MySQL code to change the email to the desired email address.
+ - Update php.ini and sendmail.ini to the specified values in the change files 'phpIniChange.txt' and 'sendmailIniChange.txt,' respectively.
+ - The img directory must be exactly the same in the htdocs page (php needs images in relative path).
+
+To "register" and add your own user account to the database:
+1. create a file 'defined.php' and put it in a new folder 'private'
+    - end result will be 'private/defined.php'
+2. copy this and set the desired login info in $USERNAME and $PASSWORD:
+```
 <?php
 $SERVER_NAME = "localhost";
 $DATABASE_NAME = "web_dev";
@@ -25,3 +31,4 @@ $DATABASE_NAME = "";
 $USERNAME =  "";
 $PASSWORD = "";
 ?>
+```
