@@ -1,10 +1,9 @@
 /* Rectangle 6 */
-div#container {
-    position: absolute;
-    width: 346px;
-    height: 165px;
-    left: 205px;
-    top: 198px;
+form#signInForm {
+    padding: 30px 20px 0px 20px;
+    margin: auto;
+    width: 386px;
+    height: 195px;
     
     background: #FEFEFE;
     mix-blend-mode: darken;
@@ -15,13 +14,10 @@ div#container {
 
 /* white_bg_sinfonia */
 #back {
-position: absolute;
-width: 118px;
-height: 141px;
-left: 326px;
-top: 99px;
+    width: 118px;
+    height: 141px;
 
-background: #FFFFFF;
+    background: #FFFFFF;
 }
 
 
@@ -29,11 +25,8 @@ background: #FFFFFF;
 
 /* Username: */
 label#userLabel {
-    position: absolute;
     width: 104px;
     height: 28px;
-    left: 222px;
-    top: 222px;
 
     font-family: 'Roboto';
     font-style: normal;
@@ -50,11 +43,8 @@ label#userLabel {
 
 /* Password: */
 label#passLabel {
-    position: absolute;
     width: 104px;
     height: 28px;
-    left: 222px;
-    top: 281px;
 
     font-family: 'Roboto';
     font-style: normal;
@@ -71,11 +61,8 @@ label#passLabel {
 
 /* Username goes here */
 input#user {
-    position: absolute;
     width: 147px;
     height: 22px;
-    left: 296px;
-    top: 255px;
 
     font-family: 'Roboto';
     font-style: normal;
@@ -92,11 +79,8 @@ input#user {
 
 /* Password goes here */
 input#pass {
-    position: absolute;
     width: 147px;
     height: 22px;
-    left: 296px;
-    top: 314px;
 
     font-family: 'Roboto';
     font-style: normal;
@@ -111,46 +95,38 @@ input#pass {
 }
 
 
-/* sinfonia_img_login */
-/*
-position: absolute;
-width: 117px;
-height: 130px;
-left: 326px;
-top: 99px;
-
-border: 0.5px solid #000000;
-border-radius: 18px;*/
-
-
 /* Sign In Button */
-button#signIn {
-    position: absolute;
-    visibility: hidden;
+input#submit-button {
+    margin: auto;
     width: 117px;
     height: 30px;
-    left: 319px;
-    top: 345px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
-    display: flex;
+    display: block;
     align-items: center;
     text-align: center;
 
     color: #282A2B;
+    background-color: #FEFEFE;
+    border-width: thin;
+    border-radius: 18px;
 }
 
 
 /* sinfonia_img_login */
 img#bigLogo {
-    position: absolute;
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: -30px;
     width: 117px;
     height: 130px;
-    left: 319px;
-    top: 345px;
 
     background: #FEFEFE;
     border: 0.5px solid #000000;
