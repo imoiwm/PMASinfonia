@@ -6,13 +6,13 @@ __Website for the UGA chapter of Phi Mu Alpha Sinfonia. Alternatively, completed
 In order for email to work, Download PHPMailer, Using Composer (composer require phpmailer/phpmailer).
  - The login has an reset password that changes the password to a random string and sends it via email.
  - Use updateBrotherEmail() or plain MySQL code to change the email to the desired email address.
- - Update php.ini and sendmail.ini to the specified values in the change files 'phpIniChange.txt' and 'sendmailIniChange.txt,' respectively.
+ - Update php.ini and sendmail.ini to the specified values in the change files 'phpChange.txt' and 'sendmailChange.txt,' respectively.
  - The img directory must be exactly the same in the htdocs page (php needs images in relative path).
 
 To "register" and add your own user account to the database:
 1. create a file 'defined.php' and put it in a new folder 'private'
     - end result will be 'private/defined.php'
-2. copy this and set the desired login info in $USERNAME and $PASSWORD:
+2. copy either 'private/temp.txt' or this (same contents) and set the desired login info in $USERNAME and $PASSWORD:
 ```
 <?php
 $SERVER_NAME = "localhost";
