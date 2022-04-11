@@ -3,7 +3,7 @@
 <html lang="en-US">
     <head>
         <title>Merch Page</title>
-        <?php headInfo("Merchandise", "Merch, Products", []); ?>
+        <?php headInfo("Merchandise", "Merch, Products", [merch.css]); ?>
     </head>
     <body id="merch-body">
         <?php
@@ -33,7 +33,7 @@
             Try again in a few hours.</p>" /*. $e->getMessage()*/;
          }
          if (!$conn) {
-             echo "<p>There are currently no upcoming events yet.</p>";
+             echo "<p>There are no items yet.</p>";
          }
          echo "</div>";
          foot();
