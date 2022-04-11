@@ -1,6 +1,7 @@
 # jtm13's custom stuff
 .vscode/
 img/uploads
-private/
+private/defined.php
+private/*.php
 vendor/
 composer.*
