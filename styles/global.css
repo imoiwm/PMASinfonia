@@ -76,3 +76,25 @@ ul.nav-list {
 li.nav-list {
     display: inline;
 }
+
+.change-button {
+    background: #FEFEFE;
+    border: 1px solid #282A2B;
+    box-sizing: border-box;
+    border-radius: 15px;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+
+    color: #000000;
+    transition: 300ms;
+}
+
+.change-button:hover {
+    transition: 300ms;
+    color: #FEFEFE;
+    background-color: #CC0000;
+}

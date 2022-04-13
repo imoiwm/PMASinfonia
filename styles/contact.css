@@ -1,29 +1,67 @@
-.email-icon {
-    background: url("email.png");
-}
-
-.inputs {
-    background: #FEFEFE;
-    border: 1px solid rgba(40, 42, 43, 0.5);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.text {
+* {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
+}
+
+input[type="email"], input[type="text"], textarea {
+    background: #FEFEFE;
+    border: 1px solid rgba(40, 42, 43, 0.5);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="email"] {
+    height: 20px;
+    width: 100%;
+}
+
+.text {
     display: flex;
     align-items: center;
 
     color: #000000;
 }
 
-.phone-icon {
-    background: url("phone(2).png");
+div#pane {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 85%;
+    margin: auto;
 }
 
-.map-icon {
-    background: url("map-marker.png");
+section {
+    display: inline;
+    margin-top: 50px;
+}
+
+section#right-side {
+    width: 45%;
+}
+
+textarea {
+    width: 100%;
+    height: 170px;
+    display: inline-block;
+    resize: none;
+}
+
+img.svg-img {
+    width: 80%;
+}
+
+.right-col {
+    width: 45px;
+}
+
+.left-col {
+    text-align: center;
+}
+
+table {
+    height: 90%;
 }
