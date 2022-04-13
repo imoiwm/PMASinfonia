@@ -20,7 +20,7 @@ if (!$initialized) {
 <html>
     <head>
         <title>Profile</title>
-        <?php headInfo("Profile", "Profile, View Profile", []); ?>
+        <?php headInfo("Profile", "Profile, View Profile", ["profile"]); ?>
     </head>
     <body>
         <?php
@@ -47,7 +47,7 @@ if (!$initialized) {
                 if (strcmp($_SESSION["Pass"], $str) == 0) {
                     $_SESSION["Pass"] = htmlspecialchars($it["Password"]);
                 } else {
-                    header("Location: login.html");
+                    header("Location: login.php");
                     exit();
                 }
                 echo $ev->maxInfo();

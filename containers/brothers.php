@@ -24,34 +24,36 @@ class Brothers extends Container {
     function maxInfo(): string {
         $fullName = parent::getArray()["FirstName"] . " " . parent::getArray()["LastName"];
         return '<div class="brother" id="brother-' . ($this->id = parent::getArray()["ID"]) . '">
-        <header class="brother-header">
-        <h3 class="brother-name">' . $fullName . '</h3>
-        </header>
+        <section id="left-section">
         <img class="brother-picture" src="' . parent::checkPicture(parent::getArray()["Picture"]) . '" alt="' . $fullName . '\'s picture"/>
         <form action="processes/changePicture.php" method="post" enctype="multipart/form-data">
-        <label for="image">Select image to upload:</label>
-        <input type="file" name="image" id="image">
-        <input type="submit" value="Upload Image">
+        <label for="image" class="change-button">Choose File
+        <input type="file"  class="change-button" name="image" id="image">
+        </label>
+        <input class="change-button" type="submit" value="Upload Image">
         </form>
+        </section>
+        <section id="right-section">
+        <header class="brother-header">
+        <h1 class="brother-name">Welcome, ' . $fullName . '</h1>
+        <hr/>
+        </header>
         <form action="processes/changeEmail.php" method="post">
         <input type="hidden" id="id" name="id" value="' . $this->id . '">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="no email entered" value="' . htmlspecialchars(parent::getArray()["Email"]) . '" pattern="
-        (?:[a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@
-        (?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|
-        1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])"
-        required>
-        <input type="submit" value="Change Email">
+        <label for="email" class="text">Email:</label>
+        <input type="email" id="email" class="text-box" name="email" placeholder="no email entered" value="' . htmlspecialchars(parent::getArray()["Email"]) . '" required>
+        <input class="change-button" type="submit" value="Change Email">
         </form>
         <br>
         <form action="processes/changeBio.php" method="post">
-        <label for="bio">About Me:</label>
-        <textarea id="bio" name="bio" placeholder="no description"  maxlength="2000" required>'
+        <label for="bio" class="text">About Me:</label>
+        <textarea id="bio" name="bio" class="text-box" placeholder="no description"  maxlength="2000" required>'
         . htmlspecialchars(parent::getArray()["Bio"]) .
         '</textarea>
         <br>
-        <input type="submit" value="Change Bio">
+        <input class="change-button" type="submit" value="Change Bio">
         </form>
+        </section>
         </div>';
     }
 }
