@@ -3,11 +3,12 @@
 <html lang="en-US">
     <head>
         <title>Brothers</title>
-        <?php headInfo("Brothers", "Brothers, Brothers List, List of Brothers", []); ?>
+        <?php headInfo("Brothers", "Brothers, Brothers List, List of Brothers", ["brothers"]); ?>
     </head>
     <body id="calendar-body">
+        <?php head(); ?>
+        <h1>Brothers</h1>
         <?php
-         head();
          echo   "<div class=\"brothers-collection\">";
          include("containers/brothers.php");
          include_once("private/defined.php");
