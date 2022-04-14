@@ -19,7 +19,7 @@ header#global-head {
 
 /* Footer */
 footer#global-footer {
-    position: sticky;
+    position: fixed;
     bottom: 0%;
     height: 9.607%;
     width: 100%;

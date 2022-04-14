@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php require_once("template.php"); ?>
-<html>
+<html lang="en-US">
     <head>
         <title>About Us</title>
         <?php headInfo("Aubout Us", "About, About Us", []); ?>

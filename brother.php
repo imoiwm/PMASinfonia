@@ -17,7 +17,7 @@ if (!$initialized) {
     $_SESSION["Pass"] = htmlspecialchars($_POST["pass"]);
 }
 ?>
-<html>
+<html lang="en-US">
     <head>
         <title>Profile</title>
         <?php headInfo("Profile", "Profile, View Profile", ["profile"]); ?>

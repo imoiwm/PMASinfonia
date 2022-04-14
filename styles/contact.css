@@ -65,3 +65,15 @@ img.svg-img {
 table {
     height: 90%;
 }
+
+a.middle-text {
+    transition: 300ms;
+    text-decoration: none;
+    color: black;
+}
+
+a.middle-text:hover {
+    transition: 300ms;
+    text-decoration: underline;
+    text-decoration-color: #CC0000;
+}

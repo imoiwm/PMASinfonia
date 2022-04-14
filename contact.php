@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php require_once("template.php"); ?>
-<html>
+<html lang="en-US">
     <head>
         <title>Contact Us</title>
         <?php headInfo("Contacts", "Contacts, Contact Us", ["contact"]); ?>
@@ -40,29 +40,35 @@
                 <table>
                     <tr>
                         <td class="right-col">
-                            <img class="svg-img" src="img/location.svg"></img>
+                            <a href="https://www.google.com/maps/search/?api=1&query=250+River+Road%2C+Athens%2C+GA+30602+United+States" alt="Link to google maps of the location of PMA Sinfonia UGA Chapter">
+                                <img class="svg-img" src="img/location.svg"></img>
+                            </a>
                         </td>
                         <td class="left-col">
-                            <p class="middle-text">
+                            <a href="https://www.google.com/maps/search/?api=1&query=250+River+Road%2C+Athens%2C+GA+30602+United+States" class="middle-text">
                                 250 River Road<br/>
                                 Athens, GA 30602<br/>
                                 United States
-                            </p>
+                            </a>
                         </td>
                     </tr>
                     <tr>
                         <td class="right-col">
-                            <img class="svg-img" src="img/call.svg"></img>
+                            <a href="tel:+7706014123" alt="Link for calling PMA Sinfonia UGA Chapter">
+                                <img class="svg-img" src="img/call.svg"></img>
+                            </a>
                         </td>
                         <td class="left-col">
-                            <p class="middle-text">
+                            <a href="tel:+7706014123" class="middle-text">
                                 770-601-4123
-                            </p>
+                            </a>
                         </td>
                     </tr>
                     <tr>
                         <td class="right-col">
-                            <img class="svg-img" src="img/mail.svg"></img>
+                            <a href="mailto:ugasinfonia@gmail.com" alt="Click to open an email to PMA Sinfonia UGA Chapter">
+                                <img class="svg-img" src="img/mail.svg"></img>
+                            </a>
                         </td>
                         <td class="left-col">
                             <a href="mailto:ugasinfonia@gmail.com" class="middle-text">
