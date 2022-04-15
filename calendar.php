@@ -3,7 +3,7 @@
 <html lang="en-US">
     <head>
         <title>Calendar</title>
-        <?php headInfo("Calendar", "Calendar, Events", ["calendar"]); ?>
+        <?php headInfo("Calendar", "Calendar, Events", []); ?>
     </head>
     <body id="calendar-body">
         <?php

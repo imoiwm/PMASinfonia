@@ -1,3 +1,8 @@
+h1 {
+    text-align: center;
+    font-size: 70px;
+}
+
 img#bigLogo {
     display: block;
     margin-left: auto;
@@ -5,8 +10,8 @@ img#bigLogo {
     margin-top: 30px;
 
     background: #FEFEFE;
-    width: 60%;
-    max-width: 600px;
+    width: 37%;
+    /* max-width: 600px; */
 }
 
 div#pane {
@@ -23,6 +28,8 @@ section {
     margin-top: 20px;
 }
 
-section#right-side {
-    width: 45%;
+.para {
+    font-family:'Garamond', Tserif;
+    font-size: 40px;
+    text-align: center;
 }

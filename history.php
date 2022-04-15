@@ -8,9 +8,10 @@
     <body>
         <?php head(); ?>
         <img id="bigLogo" src="img/paper-logo.png"/>
+        <h1>About the Chapter</h1>
         <div id="pane">
             <section id="right-side">
-                <p>
+                <p class="para">
                     Lorem ipsum dolor sit amet, consectetur<br/>
                     adipiscing elit. Cras posuere elit bibendum,<br/>
                     tincidunt turpis at, varius ante. Maecenas quis odio<br/>
@@ -25,7 +26,7 @@
                 </p>
             </section>
             <section id="left-side">
-                <p>
+                <p class="para">
                     Lorem ipsum dolor sit amet, consectetur<br/>
                     adipiscing elit. Cras posuere elit bibendum,<br/>
                     tincidunt turpis at, varius ante. Maecenas quis odio<br/>
