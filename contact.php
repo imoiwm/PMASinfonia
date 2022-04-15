@@ -6,9 +6,9 @@
         <?php headInfo("Contacts", "Contacts, Contact Us", ["contact"]); ?>
         <script>
             function mail(email, message, name) {
-                let str = "Name: " + name + "%0D%0AEmail: " + email + "%0D%0AMessage: " + message;
+                let str = "Name: " + name + "\nEmail: " + email + "\nMessage: " + message;
                 let subj = "Contact Message";
-                window.open('mailto:ugasinfonia@gmail.com?subject=' + subj + '&body=' + str);
+                window.open('mailto:ugasinfonia@gmail.com?subject=' + subj + '&body=' + encodeURIComponent(str));
             }
 
             function compose() {
