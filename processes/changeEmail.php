@@ -3,7 +3,7 @@
 session_start();
 if (!isset($_SESSION["User"]) || !isset($_SESSION["Pass"]) || !isset($_SESSION["ID"])
     || (!isset($_POST["email"]) && !filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) === false)) {
-    header("Location: login.html");
+    header("Location: login.php");
     exit();
 }
 

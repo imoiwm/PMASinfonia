@@ -5,7 +5,7 @@ function random_string(int $loop) {
     return $stri;
 }
 if (!isset($_POST["submit"]) || !isset($_POST["user"])) {
-    header("Location: ../login.html");
+    header("Location: ../login.php");
     exit();
 }
 $user=$_POST["user"];
@@ -42,7 +42,7 @@ if (!$conn) {
 }
 $message = "New Password: " . $pass;
 if (strcmp($email, "No Email") == 0) {
-    header("Location: login.html");
+    header("Location: login.php");
     exit();
 }
 if (!isset($_COOKIE["times"])) {
@@ -62,6 +62,6 @@ try {
 } catch (Exception $e) {
     $er = "Mailer Error: " . $mail->ErrorInfo;
 }
-header("Location: ../login.html");
+header("Location: ../login.php");
 die($er);
 ?>

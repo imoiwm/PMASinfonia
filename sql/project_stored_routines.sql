@@ -123,3 +123,33 @@ CREATE PROCEDURE getBrother(IN u varchar(256)) COMMENT "
     SELECT BrotherID AS ID, FirstName, LastName, IFNULL(BrotherBio, "") AS Bio, IFNULL(BrotherPicture, "no img") AS Picture, IFNULL(Email, "") AS Email, BrotherPassword AS `Password` FROM brothers WHERE u = brothers.UserName;
     END $$
 DROP PROCEDURE getBrother;
+
+DELIMITER $$
+CREATE PROCEDURE getComments(IN wh char(1), IN whid int) COMMENT "
+--Description: gets the comments for a specific event or merch.
+--Tables: Comment
+--Parameters: 
+	[wh]=Which Table ('e' for Events, 'm' for Merch)
+    [whid]=The id for the given table
+--Returns: Query of the details of the comment:
+	[ID]=CommentID
+    [BrotherID]
+    [Text]=CommentText
+    [Liked]"
+	BEGIN
+    SELECT CommentID AS ID, (SELECT FirstName FROM brothers WHERE brothers.BrotherID = comments.BrotherID) AS BrotherName, CommentText AS `Text`, Liked FROM comments WHERE wh = comments.Which AND whid = comments.WhichID;
+    END $$
+DELIMITER $$
+CREATE PROCEDURE createComment(IN id int, IN ct TEXT, IN wh char(1), IN l boolean, IN whid int) COMMENT "
+--Description: inserts comment.
+--Tables: Brother
+--Parameters:
+    [id]=The BrotherID that made it
+    [ct]=The text for the comment
+	[wh]=Which Table ('e' for Events, 'm' for Merch)
+    [l]=Liked or not
+    [whid]=The id for the given table
+--Returns: none."
+	BEGIN
+    INSERT INTO comments (BrotherID, CommentText, Which, Liked, WhichID) VALUES (id, ct, wh, l, whid);
+    END $$

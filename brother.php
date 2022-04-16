@@ -47,6 +47,7 @@ if (!$initialized) {
                 if (strcmp($_SESSION["Pass"], $str) == 0) {
                     $_SESSION["Pass"] = htmlspecialchars($it["Password"]);
                 } else {
+                    session_unset();
                     header("Location: login.php");
                     exit();
                 }
@@ -60,7 +61,8 @@ if (!$initialized) {
          }
          $stmt->closeCursor();
          if (!$conn) {
-             echo "<p>There are currently no upcoming brothers yet.</p>";
+             echo "<p>There are no brothers by that username yet.</p>";
+             session_unset();
          }
          echo "</div>";
          foot();

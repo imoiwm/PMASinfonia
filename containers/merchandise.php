@@ -7,7 +7,8 @@ class Merchandise extends Container {
     }
 
     function info(): string {
-        return "<div class=\"merch\" id=\"merch-" . ($this->id = parent::getArray()["ID"]) . "\">
+        return "<a href=\"reviews.php?which=m&id=" . ($this->id = parent::getArray()["ID"]) . "\">
+        <div class=\"merch\" id=\"merch-" . $this->id . "\">
         <img class=\"merch-image\" src=\"" . parent::checkPicture(parent::getArray()["Picture"]) . "\" alt=\"Merchandise Photo\"/>
         <div class=\"merch-other\">
         <header class=\"merch-header\">
@@ -19,7 +20,8 @@ class Merchandise extends Container {
         <hr class=\"merch-hr\"/>
         <p class=\"merch-description\">" . parent::getArray()["MerchDescription"] . "</p>
         </div>
-        </div>";
+        </div>
+        </a>";
     }
 }
 ?>
