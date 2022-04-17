@@ -1,4 +1,4 @@
-function ajax() {
+function ajax(callback) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         switch (this.readyState) {
@@ -13,29 +13,15 @@ function ajax() {
             case 4: // request finished and response is ready
                 switch (this.status) {
                     case 200: // Found
+                        let data = [];
                         this.responseXML.getElementsByTagName("EVENT").forEach(element => {
-                            let a = document.createElement('a');
-                            a.setAttribute('href', element.getElementsByTagName("LINK")[0].innerHTML);
-                            let div = document.createElement('div');
-                            div.setAttribute('class', 'event');
-                            let title = document.createElement('span');
-                            title.setAttribute('class', 'event-title');
-                            title.appendChild(document.createTextNode(
-                                element.getElementsByTagName("TITLE")[0].innerHTML));
-                            let location = document.createElement('span');
-                            location.setAttribute('class', 'event-location');
-                            location.appendChild(document.createTextNode(
-                                element.getElementsByTagName("LOCATION")[0].innerHTML));
-                            let date = document.createElement('span');
-                            date.setAttribute('class', 'event-date');
-                            date.appendChild(document.createTextNode(
-                                element.getElementsByTagName("DATE")[0].innerHTML));
-                            div.appendChild(title);
-                            div.appendChild(location);
-                            div.appendChild(date);
-                            a.appendChild(div);
-                            //document.getElementBy... .appendChild(a);
+                            let link = element.getElementsByTagName("LINK")[0].innerHTML;
+                            let title = element.getElementsByTagName("TITLE")[0].innerHTML;
+                            let loc = element.getElementsByTagName("LOCATION")[0].innerHTML;
+                            let da = element.getElementsByTagName("DATE")[0].innerHTML;
+                            data.push({eventName: title, calendar: 'Events', color: 'blue', date: da, location: loc, detail: link});
                         });
+                        callback(data);
                         break;
                     case 300: // redirection
                         location.assign(this.responseXML.getElementsByTagName("URL")[0].innerHTML);
@@ -58,4 +44,4 @@ function ajax() {
     xmlhttp.send("method=" + method + "&value=" + value);
 }
 
-function getEvents() {ajax();}
+function getEvents(func) {ajax(func);}
