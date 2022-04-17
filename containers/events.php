@@ -20,5 +20,16 @@ class Events extends Container {
         </div>
         </a>";
     }
+
+    function xmlInfo(): string {
+        return "<EVENT>
+        <LINK>reviews.php?which=e&id=" . ($this->id = parent::getArray()["ID"]) . "</LINK>
+        <ID>" . ($this->id = parent::getArray()["ID"]) . "</ID>
+        <TITLE>" . parent::getArray()["EventTitle"] . "</TITLE>
+        <DATE>" . parent::getArray()["EventDay"] . "</p>
+        <LOCATION>" . parent::getArray()["EventLocation"] . "<LOCATION>
+        <DESCRIPTION>" . parent::getArray()["EventDescription"] . "</DESCRIPTION>
+        </EVENT>";
+    }
 }
 ?>
