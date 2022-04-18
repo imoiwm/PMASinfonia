@@ -1,8 +1,9 @@
 <?php
-include("containers/events.php");
-include_once("private/defined.php");
+require("../containers/events.php");
+require_once("../private/defined.php");
 $conn = false;
-echo "<ROOT>";
+echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<ROOT>";
 try {
    if ($test === null) exit();
   // set the PDO error mode to exception
@@ -29,5 +30,6 @@ try {
 if (!$conn) {
     echo "<EVENT>There are currently no upcoming events yet.</EVENT>";
 }
-echo "</ROOT>";
+echo "
+</ROOT>";
 ?>

@@ -1,4 +1,4 @@
-function ajax(callback) {
+function ajax() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         switch (this.readyState) {
@@ -14,14 +14,16 @@ function ajax(callback) {
                 switch (this.status) {
                     case 200: // Found
                         let data = [];
-                        this.responseXML.getElementsByTagName("EVENT").forEach(element => {
-                            let link = element.getElementsByTagName("LINK")[0].innerHTML;
+                        let events = this.responseXML.getElementsByTagName("EVENT");
+                        for (t = 0; t < events.length; t++) {
+                            let element = events[t];
+                            let id = element.getElementsByTagName("ID")[0].innerHTML;
                             let title = element.getElementsByTagName("TITLE")[0].innerHTML;
                             let loc = element.getElementsByTagName("LOCATION")[0].innerHTML;
-                            let da = element.getElementsByTagName("DATE")[0].innerHTML;
-                            data.push({eventName: title, calendar: 'Events', color: 'blue', date: da, location: loc, detail: link});
-                        });
-                        callback(data);
+                            let da = new Date(element.getElementsByTagName("DATE")[0].innerHTML);
+                            data.push({eventName: title, calendar: 'Events', color: 'blue', date: da, location: loc, detail: "reviews.php?which=e&id=" + id});
+                        };
+                        calendar = new Calendar('#event-calendar', data);
                         break;
                     case 300: // redirection
                         location.assign(this.responseXML.getElementsByTagName("URL")[0].innerHTML);
@@ -38,10 +40,9 @@ function ajax(callback) {
             default: // in here just in case
         }
     };
-    xmlhttp.open("POST", "process.php", true);
-    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.open("GET", "processes/events.php", true);
     xmlhttp.overrideMimeType('application/xml');
-    xmlhttp.send("method=" + method + "&value=" + value);
+    xmlhttp.send();
 }
 
-function getEvents(func) {ajax(func);}
+function getEvents() {ajax();}

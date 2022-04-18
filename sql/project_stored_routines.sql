@@ -11,7 +11,7 @@ COMMENT "
     [EventLocation]
     [EventDescription]"
 	BEGIN
-    SELECT EventID AS ID, EventTitle, DATE_FORMAT(EventDate, "%a, %b %D") AS EventDay, EventLocation, EventDescription FROM events ORDER BY EventDate;
+    SELECT EventID AS ID, EventTitle, DATE_FORMAT(EventDate, "%Y-%c-%d") AS EventDay, EventLocation, EventDescription FROM events ORDER BY EventDate;
     END $$
 DELIMITER $$
 CREATE PROCEDURE getMerch() COMMENT "
