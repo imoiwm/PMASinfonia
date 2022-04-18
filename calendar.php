@@ -10,7 +10,8 @@
     </head>
     <body id="calendar-body">
         <?php head(); ?>
-        <div id="event-calendar"></div>
+        <div id="event-calendar" ></div>
         <?php foot(); ?>
+        <script>getEvents();</script>
     </body>
 </html>

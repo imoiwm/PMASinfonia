@@ -321,13 +321,4 @@
       return ele;
     }
   }();
-
-
-  
-  !function() {
-    getEvents();
-  
-
-
-}();
 // copied from https://www.sliderrevolution.com/resources/html-calendar/ 

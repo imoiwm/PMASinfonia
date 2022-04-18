@@ -252,14 +252,16 @@ body {
 .event span.event-name:not(:hover) {
       display: inline-block;
       padding: 0 0 0 7px;
+    transition: 300ms;
       color: rgba(255, 255, 255, 1);
       text-decoration: none;
 }
 
 .event span.event-name:hover {
     transition: 300ms;
-    text-decoration: solid;
+    text-decoration: underline;
     text-decoration-color: #CC0000;
+    color: rgba(255, 255, 255, 1);
 }
 
 .event-wrap, .event-location {
