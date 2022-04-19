@@ -23,6 +23,9 @@ function head(): void {
 
 function foot(): void {
     echo '<script>detect();</script>
+    <br>
+    <br>
+    <br>
     <footer id="global-footer">
     <p id="copyright">Copyright © 2020 Phi Mu Alpha Sinfonia Fraternity of America | All Rights Reserved</p>
     </footer>';

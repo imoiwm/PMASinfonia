@@ -79,8 +79,7 @@ session_start();
                  <input type="checkbox" name="liked" id="liked"/>
                  <br/>
                  <label for"text">Comment:</label>
-                 <textarea name="text" id="text" maxlength="1900" required>
-                 </textarea>
+                 <textarea name="text" id="text" maxlength="1900" required></textarea>
                  <br/>
                  <input type="submit" value="Comment"/>
                  <br/>

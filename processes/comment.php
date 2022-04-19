@@ -24,7 +24,7 @@ try {
             || !filter_var($_SESSION["ID"], FILTER_VALIDATE_INT) === false) ? $_SESSION["ID"] : 0;
     $text = htmlspecialchars($_POST["text"]);
     $which = ($_POST["wh"] === 'm') ? 'm' : 'e';
-    $liked = (int)((isset($_POST["liked"])) ? $_POST["liked"] : false);
+    $liked = (int)((isset($_POST["liked"])) ? $_POST["liked"] == "on" : false);
     $which_id = (filter_var($_POST["whid"], FILTER_VALIDATE_INT) === 0 
             || !filter_var($_POST["whid"], FILTER_VALIDATE_INT) === false) ? intval($_POST["whid"]) : 0;
     $stmt->execute();

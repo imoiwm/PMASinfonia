@@ -260,7 +260,7 @@ body {
 .event span.event-name:hover, .event address:hover {
     transition: 300ms;
     text-decoration: underline;
-    text-decoration-color: #CC0000;
+    text-decoration-color: #931313;
     color: rgba(255, 255, 255, 1);
 }
 

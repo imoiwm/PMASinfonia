@@ -53,7 +53,7 @@ if (!isset($_COOKIE["times"])) {
 require_once("mail.php");
 $mail->addAddress($email);
 $mail->Subject = $user . ": PASSWORD CHANGED";
-$mail->Body = "<p>$message</p><p>If you did not change your password, contact [] immeadiately.</p>";
+$mail->Body = "<p>$message</p><p>If you did not change your password, contact the sysadmin immeadiately.</p>";
 $mail->AltBody = $message;
 $er;
 try {
