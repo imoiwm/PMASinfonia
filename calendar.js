@@ -238,13 +238,16 @@
         var locSpan = createElement('address', 'event-location', ev.location);
         var a = document.createElement('a');
         a.href = ev.detail;
+        var loca = document.createElement('a');
+        loca.href = (ev.location.length > 5) ? "https://www.google.com/maps/search/?api=1&query=" + encodeURI(ev.location) : "";
         var divWrap = createElement('div', 'event-wrap');
   
         divWrap.appendChild(square);
         divWrap.appendChild(span);
         a.appendChild(divWrap);
         div.appendChild(a);
-        div.appendChild(locSpan);
+        loca.appendChild(locSpan);
+        div.appendChild(loca);
         wrapper.appendChild(div);
       });
   

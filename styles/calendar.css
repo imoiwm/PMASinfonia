@@ -249,7 +249,7 @@ body {
       vertical-align: top;
 }
     
-.event span.event-name:not(:hover) {
+.event span.event-name:not(:hover), .event address:not(:hover) {
       display: inline-block;
       padding: 0 0 0 7px;
     transition: 300ms;
@@ -257,7 +257,7 @@ body {
       text-decoration: none;
 }
 
-.event span.event-name:hover {
+.event span.event-name:hover, .event address:hover {
     transition: 300ms;
     text-decoration: underline;
     text-decoration-color: #CC0000;
