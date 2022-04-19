@@ -10,7 +10,10 @@ session_start();
 <html lang="en-US">
     <head>
         <title>Merch Page</title>
-        <?php headInfo("Reviews", "Merch Reviews, Event Comments", ["review"]); ?>
+        <?php
+        headInfo("Reviews", "Merch Reviews, Event Comments", ["review"]);
+        jsFile("validate");
+        ?>
     </head>
     <body id="review-body">
         <?php head(); ?>
@@ -69,7 +72,7 @@ session_start();
              }
 
              if (isset($_SESSION["User"]) && isset($_SESSION["Pass"])) {
-                 echo '<form id="brother-comment-form" method="post" action="processes/comment.php">
+                 echo '<form id="brother-comment-form" method="post" action="processes/comment.php" onsubmit="return validateTextArea(\'brother-comment-form\');">
                  <input type="hidden" id="wh" name="wh" value="' . $_GET["which"] . '"/>
                  <input type="hidden" id="whid" name="whid" value="' . $_GET["id"] . '"/>
                  <label for"liked">Liked:</label>

@@ -26,7 +26,7 @@ class Brothers extends Container {
         return '<div class="brother" id="brother-' . ($this->id = parent::getArray()["ID"]) . '">
         <section id="left-section">
         <img class="brother-picture" src="' . parent::checkPicture(parent::getArray()["Picture"]) . '" alt="' . $fullName . '\'s picture"/>
-        <form action="processes/changePicture.php" method="post" enctype="multipart/form-data">
+        <form id="image-form" action="processes/changePicture.php" method="post" enctype="multipart/form-data" onsubmit="return validate(\'image-form\');">
         <label for="image" class="change-button">Choose File
         <input type="file"  class="change-button" name="image" id="image">
         </label>
@@ -38,14 +38,14 @@ class Brothers extends Container {
         <h1 class="brother-name">Welcome, ' . $fullName . '</h1>
         <hr/>
         </header>
-        <form action="processes/changeEmail.php" method="post">
+        <form id="email-form" action="processes/changeEmail.php" method="post" onsubmit="return validate(\'email-form\');">
         <input type="hidden" id="id" name="id" value="' . $this->id . '">
         <label for="email" class="text">Email:</label>
         <input type="email" id="email" class="text-box" name="email" placeholder="no email entered" value="' . htmlspecialchars(parent::getArray()["Email"]) . '" required>
         <input class="change-button" type="submit" value="Change Email">
         </form>
         <br>
-        <form action="processes/changeBio.php" method="post">
+        <form id="bio-form" action="processes/changeBio.php" method="post" onsubmit="return validateTextArea(\'bio-form\');">
         <label for="bio" class="text">About Me:</label>
         <textarea id="bio" name="bio" class="text-box" placeholder="no description"  maxlength="2000" required>'
         . htmlspecialchars(parent::getArray()["Bio"]) .

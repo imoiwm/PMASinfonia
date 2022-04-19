@@ -20,7 +20,10 @@ if (!$initialized) {
 <html lang="en-US">
     <head>
         <title>Profile</title>
-        <?php headInfo("Profile", "Profile, View Profile", ["profile"]); ?>
+        <?php
+        headInfo("Profile", "Profile, View Profile", ["profile"]);
+        jsFile("validate");
+        ?>
     </head>
     <body>
         <?php

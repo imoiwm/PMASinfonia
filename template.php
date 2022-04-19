@@ -32,6 +32,10 @@ function cssFile(string $fileName = "global"): void {
     echo '<link rel="stylesheet" type="text/css" href="styles/' . $fileName . '.css">';
 }
 
+function jsFile(string $fileName = "global"): void {
+    echo '<script src="' . $fileName . '.js"></script>';
+}
+
 function favicon(): void {
     echo '<link rel="icon" type="image/x-icon" href="img/favicon.ico">';
 }
@@ -53,6 +57,6 @@ function headInfo(string $description, string $keywords, array $cssFiles = []): 
     foreach($cssFiles as $file) {
         cssFile($file);
     }
-    echo '<script src="detect.js"></script>';
+    jsFile("detect");
 }
 ?>
