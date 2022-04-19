@@ -6,7 +6,8 @@ function head(): void {
                 <img class="logo" src="img/logo.png" alt="Phi Mu Alpha Sinfonia Logo">
             </a>
             <nav >
-                <ul class="nav-list">
+                <ul class="nav-list" id="ul-nav-list">
+                    <span id="global-ul-text">&#9776;</span>
                     <!--The format is very important to enure there are no spaces between items-->
                     <li class="nav-list"><a href="merchPage.php" class="nav-buttons"> Merch </a></li
                     ><li class="nav-list"><a href="listOfBrothers.php" class="nav-buttons"> Brothers </a></li
@@ -51,5 +52,6 @@ function headInfo(string $description, string $keywords, array $cssFiles = []): 
     foreach($cssFiles as $file) {
         cssFile($file);
     }
+    echo '<script src="detect.js"></script>';
 }
 ?>
