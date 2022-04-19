@@ -1,8 +1,10 @@
-window.addEventListener('resize', function() { 
+function detect() {
     if (window.innerWidth < 600) {
         let list = document.getElementsByClassName('nav-list');
-        for (t = 0; t < list.length; t++) {
-            let elem = list[t];
+        let check = false;
+        while (list.length !== 0) {
+            check = true;
+            let elem = list[0];
             elem.className = 'collapse-list';
             if (elem.nodeName.toLowerCase() === 'ul') {
                 elem.onclick = function() {
@@ -14,22 +16,30 @@ window.addEventListener('resize', function() {
                         } 
                     }
                 };
+            } else {
+                elem.style.display = 'none';
             }
         }
-        if (list.length !== 0) {
+        if (check) {
             this.document.getElementById('global-ul-text').style.display = 'inline';
         }
     } else {
         let list = document.getElementsByClassName('collapse-list');
-        for (t = 0; t < list.length; t++) {
-            let elem = list[t];
+        let check = false;
+        while (list.length !== 0) {
+            check = true;
+            let elem = list[0];
             elem.className = 'nav-list';
             if (elem.nodeName.toLowerCase() === 'ul') {
                 elem.setAttribute('onclick', '');
+            } else {
+                elem.style.display = 'inline';
             }
         }
-        if (list.length !== 0) {
+        if (check) {
             this.document.getElementById('global-ul-text').style.display = 'none';
         }
     }
-});// switches between menu and nav items depending on window width
+}// switches between menu and nav items depending on window width
+
+window.addEventListener('resize', detect);
