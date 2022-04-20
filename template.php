@@ -6,7 +6,8 @@ function head(): void {
                 <img class="logo" src="img/logo.png" alt="Phi Mu Alpha Sinfonia Logo">
             </a>
             <nav >
-                <ul class="nav-list">
+                <ul class="nav-list" id="ul-nav-list">
+                    <span id="global-ul-text">&#9776;</span>
                     <!--The format is very important to enure there are no spaces between items-->
                     <li class="nav-list"><a href="merchPage.php" class="nav-buttons"> Merch </a></li
                     ><li class="nav-list"><a href="listOfBrothers.php" class="nav-buttons"> Brothers </a></li
@@ -21,13 +22,21 @@ function head(): void {
 }
 
 function foot(): void {
-    echo '<footer id="global-footer">
+    echo '<script>detect();</script>
+    <br>
+    <br>
+    <br>
+    <footer id="global-footer">
     <p id="copyright">Copyright © 2020 Phi Mu Alpha Sinfonia Fraternity of America | All Rights Reserved</p>
     </footer>';
 }
 
 function cssFile(string $fileName = "global"): void {
     echo '<link rel="stylesheet" type="text/css" href="styles/' . $fileName . '.css">';
+}
+
+function jsFile(string $fileName = "global"): void {
+    echo '<script src="' . $fileName . '.js"></script>';
 }
 
 function favicon(): void {
@@ -51,5 +60,6 @@ function headInfo(string $description, string $keywords, array $cssFiles = []): 
     foreach($cssFiles as $file) {
         cssFile($file);
     }
+    jsFile("detect");
 }
 ?>

@@ -3,7 +3,7 @@
 session_start();
 if (!isset($_SESSION["User"]) || !isset($_SESSION["Pass"])
     || !isset($_SESSION["ID"])) {
-    header("Location: login.html");
+    header("Location: login.php");
     exit();
 }
 

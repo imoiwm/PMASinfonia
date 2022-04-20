@@ -7,16 +7,29 @@ class Events extends Container {
     }
 
     function info(): string {
-        return "<div class=\"event\" id=\"event-" . ($this->id = parent::getArray()["ID"]) . "\">
+        return "<a href=\"reviews.php?which=e&id=" . ($this->id = parent::getArray()["ID"]) . "\">
+        <div class=\"event\" id=\"event-" . ($this->id = parent::getArray()["ID"]) . "\">
         <header class=\"event-header\">
-        <h3 class=\"event-title\">" . parent::getArray()["EventTitle"] . "</h3>\n
+        <h3 class=\"event-title\">" . parent::getArray()["EventTitle"] . "</h3>
         <div class=\"date-location\">
-        <p class=\"event-date\">" . parent::getArray()["EventDay"] . "</p>\n
+        <p class=\"event-date\">" . parent::getArray()["EventDay"] . "</p>
         <address class=\"event-location\">" . parent::getArray()["EventLocation"] . "</address>
-        \n</div>
-        \n</header>
-        \n<p class=\"event-description\">" . parent::getArray()["EventDescription"] . "</p>
-        \n</div>";
+        </div>
+        </header>
+        <p class=\"event-description\">" . parent::getArray()["EventDescription"] . "</p>
+        </div>
+        </a>";
+    }
+
+    function xmlInfo(): string {
+        return "
+        <EVENT>
+        <ID>" . ($this->id = parent::getArray()["ID"]) . "</ID>
+        <TITLE>" . parent::getArray()["EventTitle"] . "</TITLE>
+        <DATE>" . parent::getArray()["EventDay"] . "</DATE>
+        <LOCATION>" . parent::getArray()["EventLocation"] . "</LOCATION>
+        <DESCRIPTION>" . parent::getArray()["EventDescription"] . "</DESCRIPTION>
+        </EVENT>";
     }
 }
 ?>

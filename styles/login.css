@@ -99,6 +99,10 @@ input#submit-button {
     align-items: center;
     text-align: center;
     
+    
+}
+
+input.submit-button {
     transition: 300ms;
     color: #282A2B;
     background-color: #FEFEFE;
@@ -106,10 +110,10 @@ input#submit-button {
     border-radius: 18px;
 }
 
-input#submit-button:hover {
+input.submit-button:hover {
     transition: 300ms;
     color: #FEFEFE;
-    background-color: #CC0000;
+    background-color: #931313;
 }
 
 /* sinfonia_img_login */
