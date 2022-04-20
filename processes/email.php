@@ -9,9 +9,9 @@ if (!isset($_POST["submit"]) || !isset($_POST["user"])) {
     exit();
 }
 $user=$_POST["user"];
-require_once("changePassword.php");
+require_once("changePass.php");
 $pass = random_string(rand(15, 29));
-changePassword($user, $pass);
+$email = changePassword($user, $pass);
 $message = "New Password: " . $pass;
 if (strcmp($email, "No Email") == 0) {
     header("Location: login.php");

@@ -1,5 +1,6 @@
 <?php
-set_include_path(get_include_path() . PATH_SEPARATOR . getcwd() . PATH_SEPARATOR . getcwd() . '\\processes' . PATH_SEPARATOR . getcwd() . '\\private');
+set_include_path(get_include_path() . PATH_SEPARATOR . getcwd() . PATH_SEPARATOR . getcwd() . '\\processes'
+ . PATH_SEPARATOR . getcwd() . '\\private' . PATH_SEPARATOR . getcwd() . '\\..\\private' . PATH_SEPARATOR . getcwd() . '\\..\\processes');
 require_once("defined.php");
 require_once("encrypt.php");
 function changePassword(string $user, string $pass): string {

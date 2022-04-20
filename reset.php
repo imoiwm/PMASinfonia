@@ -1,5 +1,5 @@
 <?php
-require_once("processes/changePassword.php");
+require_once("processes/changePass.php");
 $users = [
     'AJSeawright',
     'AMAull',
