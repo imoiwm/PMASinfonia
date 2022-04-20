@@ -30,7 +30,7 @@ CREATE TABLE `brothers` (
   `UserName` varchar(256) NOT NULL,
   `BrotherPassword` varchar(256) NOT NULL,
   `BrotherPicture` varchar(256) DEFAULT NULL,
-  `Email` varchar(50) NOT NULL DEFAULT ' ' COMMENT 'Email for the given brother',
+  `Email` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`BrotherID`),
   UNIQUE KEY `BrotherID` (`BrotherID`),
   UNIQUE KEY `UserName` (`UserName`)
@@ -43,8 +43,64 @@ CREATE TABLE `brothers` (
 
 LOCK TABLES `brothers` WRITE;
 /*!40000 ALTER TABLE `brothers` DISABLE KEYS */;
-INSERT INTO `brothers` VALUES (1,'Jack','Moro','OK Now the hottest bro out there','jackly','password',NULL,' '),(2,'Justin','Moon',NULL,'qa112','1Luckydog!!!!!!',NULL,'jtm08993@uga.edu'),(4,'Justin','Moon','Hello World!!! Now!','Qa12','BaQ8wHZeG3YJNM+iquwQmsXC8J+EEwVGg89sFdpTuUAFfqyAQVWrMzsyCuUvQ0QFN+AOB4pAEoE=','img/uploads/1615649886510.jpg','jtm08993@uga.edu');
-/*!40000 ALTER TABLE `brothers` ENABLE KEYS */;
+INSERT INTO `brothers` VALUES 
+(1,'Henry','Browne',NULL,'HTBrowne','sinfonia','./img/uploads/henrybrownesmile.png','hanktbrowne@gmail.com'),
+(2,'Andy','Nguyen',NULL,'ATNguyen','sinfonia','./img/uploads/andynguyensmile.png','andy99117@gmail.com'),
+(3,'Carson','Adams',NULL,'CMAdams','sinfonia','./img/uploads/carsonadamssmile.png','carsonmadams@yahoo.com'),
+(4,'Evan','Page',NULL,'EPPage','sinfonia','./img/uploads/evanpagesmile.png','epage0302@gmail.com'),
+(5,'Joshua','Barron',NULL,'JCBarron','sinfonia','./img/uploads/joshbarronsmile.png','josh.c.barron@gmail.com'),
+(6,'Justin','Defalco',NULL,'JBDefalco','sinfonia','./img/uploads/justindefalcosmile.png','justin.defalco@comcast.net'),
+(7,'Kelly','Fry',NULL,'KMFry','sinfonia','./img/uploads/kellyfrysmile.png','kellyfry418@gmail.com'),
+(8,'Lee','Richardson',NULL,'LTRichardson','sinfonia','./img/uploads/leethomasrichardsonsmile.png','leethomasrichardson1@gmail.com'),
+(9,'Matthew','McFadden',NULL,'MIMcFadden','sinfonia','./img/uploads/matthewmcfaddensmile.png','mattmcfa64@gmail.com'),
+(10,'Matthew','Curlee',NULL,'MRCurlee','sinfonia','./img/uploads/matthewcurleesmile.png','matthew.curlee15@gmail.com'),
+(11,'Michael','Perry',NULL,'MTPerry','sinfonia','./img/uploads/toddperrysmile.png','toddperry99@gmail.com'),
+(12,'Samuel','Riddle',NULL,'SARiddle','sinfonia','./img/uploads/samriddlesmile.png','shrfoo.riddle@gmail.com'),
+(13,'William','Halloran',NULL,'WBHalloran','sinfonia','./img/uploads/willhalloransmile.png','will.halloran54@gmail.com'),
+(14,'Zachary','Kalet',NULL,'ZKKalet','sinfonia','./img/uploads/zackkaletsmile.png','zackkalet@gmail.com'),
+(15,'Alexander','Aull',NULL,'AMAull','sinfonia','./img/uploads/alexaullsmile.png','ama15246@uga.edu'),
+(16,'Andrew','Burnes',NULL,'ARBurnes','sinfonia','./img/uploads/rushburnessmile.png','rushburnes@gmail.com'),
+(17,'Austin','Seawright',NULL,'AJSeawright','sinfonia','./img/uploads/austinseawrightsmile.png','ajseawright@outlook.com'),
+(18,'Benjiman','Phillips',NULL,'BMPhillips','sinfonia','./img/uploads/bennyphillipssmile.png','	benphillips1601@gmail.com'),
+(19,'Cameron','Kreitner',NULL,'CJKreitner','sinfonia','./img/uploads/camkreitnersmile.png','cjkreitner19@gmail.com'),
+(20,'Connor','Bacon',NULL,'CMBacon','sinfonia','./img/uploads/connorbaconsmile.png','connerbacon11@gmail.com'),
+(21,'Ethan','Mason',NULL,'EHMason','sinfonia','./img/uploads/huntermasonsmile.png','encyclopediamason@gmail.com'),
+(22,'Griffin','Haarbauer',NULL,'GWHaarbauer','sinfonia','./img/uploads/griffinhaarbauersmile.png','ghaar80@gmail.com'),
+(23,'Iain','Cooke',NULL,'IDCooke','sinfonia','./img/uploads/iaincookesmile.png','idc11956@uga.edu'),
+(24,'Ian','Cornelius',NULL,'ICCornelius','sinfonia','./img/uploads/iancorneliussmile.png','ian.cornelius@uga.edu'),
+(25,'John','Wetterhan',NULL,'JTWetterhan','sinfonia','./img/uploads/taylorwetterhansmile.png','jotaywetterhan@gmail.com'),
+(26,'Jonathan','Ray',NULL,'JNRay','sinfonia','./img/uploads/jonathanraysmile.png','nicholasgoldfarb@gmail.com'),
+(27,'Nicholas','Goldfarb',NULL,'NWGoldfarb','sinfonia','./img/uploads/nicholasgoldfarbsmile.png','Jonathan.nash.ray@gmail.com'),
+(28,'Patrick','Fuller',NULL,'PMFuller','sinfonia','./img/uploads/patrickfullersmile.png','pmfuller28@gmail.com'),
+(29,'Roberto','Ortiz',NULL,'RDOrtiz','sinfonia','./img/uploads/robertoortizsmile.png','robertodortiz14@gmail.com'),
+(30,'Thomas','Charyton',NULL,'TACharyton','sinfonia','./img/uploads/thomascharytonsmile.png','tac70630@uga.edu'),
+(33,'Tylan','Davis',NULL,'TSDavis','sinfonia','./img/uploads/tylandavissmile.png','tylandavis58@gmail.com'),
+(34,'William','OBannon',NULL,'WCOBannon','sinfonia','./img/uploads/willobannonsmile.png','william.c.obannon@gmail.com'),
+(35,'Bowen','Spackman',NULL,'BMSpackman','sinfonia','./img/uploads/bowenspackmansmile.png','bowenspackman@gmail.com'),
+(36,'Brandon','Gibson',NULL,'BJGibson','sinfonia','./img/uploads/brandongibsonsmile.png','brandonjgibson01@gmail.com'),
+(37,'Connor','Norris',NULL,'CGNorris','sinfonia','./img/uploads/connornorrissmile.png','cgnorris18694@gmail.com'),
+(38,'Daniel','Pysczynski',NULL,'DGPysczynski','sinfonia','./img/uploads/danielpysczynskismile.png','d.pysczynski@gmail.com'),
+(39,'David','Cain',NULL,'DCCain','sinfonia','./img/uploads/davidcainsmile.png','davidcain30041@gmail.com'),
+(40,'Duncan','Jourdan',NULL,'DLJourdan','sinfonia','./img/uploads/duncanjourdansmile.png','scholardjourdan@gmail.com'),
+(41,'Jackson','Camp',NULL,'JRCamp','sinfonia','./img/uploads/jacksoncampsmile.png','jacksonraycamp@gmail.com'),
+(42,'John','Stone',NULL,'JIStone','sinfonia','./img/uploads/isaacstonesmile.png','isaacbigcheese@gmail.com'),
+(43,'Langdon','Dial',NULL,'LWDial','sinfonia','./img/uploads/langdondialsmile.png','langdon.dial@gmail.com'),
+(44,'Logan','Durisch',NULL,'LCDurisch','sinfonia','./img/uploads/logandurischsmile.png','lcdurisch@gmail.com'),
+(46,'Matthew','Castro',NULL,'MACastro','sinfonia','./img/uploads/matthewcastrosmile.png','castromatt70@gmail.com'),
+(47,'Matthew','Motley',NULL,'MRMotley','sinfonia','./img/uploads/matthewmotleysmile.png','matthew9motley@gmail.com'),
+(48,'Michael','Cameron',NULL,'MRCameron','sinfonia','./img/uploads/mikeycameronsmile.png','michael.cameron1950@gmail.com'),
+(49,'Nathan','Jacobi',NULL,'NJJacobi','sinfonia','./img/uploads/nathanjacobismile.png','nathanja01@gmail.com'),
+(50,'Nicholus','Jackson',NULL,'NCJackson','sinfonia','./img/uploads/nickjacksonsmile.png','ncj22622@uga.edu'),
+(51,'Douglas','Vines',NULL,'DVines','sinfonia','./img/uploads/douglasvinessmile.png','sdv48039@uga.edu'),
+(52,'Brennan','Sweet',NULL,'BKSweet','sinfonia','./img/uploads/brennansweetsmile.png','brensweet03@gmail.com'),
+(53,'Charles','Enter',NULL,'CJEnter','sinfonia','./img/uploads/charlieentermile.png','charlieentermusic@gmail.com'),
+(54,'Drew','Gilliland',NULL,'DKGilliland','sinfonia','./img/uploads/drewgillilandsmile.png','	drewkgilliland@gmail.com'),
+(55,'Ethan','Johnson',NULL,'EMJohnson','sinfonia','./img/uploads/ethanjohnsonsmile.png','	ethanmichaeljohnson17@gmail.com'),
+(56,'Kaleb','Colwell',NULL,'KJColwell','sinfonia','./img/uploads/kalebcolwellsmile.png','kalebcolwell87@gmail.com'),
+(57,'Matthew','Trinh',NULL,'MRTrinh','sinfonia','./img/uploads/matthewtrinhsmile.png','trinhmatthew37@gmail.com'),
+(58,'Nathan','Brown',NULL,'NCBrown','sinfonia','./img/uploads/nathanbrownsmile.png','nathancbrown21@gmail.com'),
+(59,'Paul','Di Cicco',NULL,'PJDicicco','sinfonia','./img/uploads/pauldiciccosmile.png','paul@superhappyfun.net');
+/*!40000 ALTER TABLE `brothers` ENABLE KEYS */;    
 UNLOCK TABLES;
 
 --
@@ -63,7 +119,7 @@ CREATE TABLE `comments` (
   `WhichID` int unsigned NOT NULL,
   PRIMARY KEY (`CommentID`),
   UNIQUE KEY `CommentID` (`CommentID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -141,4 +197,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-15 22:42:22
+-- Dump completed on 2022-03-03 15:26:23
