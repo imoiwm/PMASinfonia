@@ -21,7 +21,7 @@
 
 DROP TABLE IF EXISTS `brothers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `brothers` (
   `BrotherID` int NOT NULL AUTO_INCREMENT,
   `FirstName` varchar(100) NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE `brothers` (
   PRIMARY KEY (`BrotherID`),
   UNIQUE KEY `BrotherID` (`BrotherID`),
   UNIQUE KEY `UserName` (`UserName`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -109,7 +109,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `comments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `comments` (
   `CommentID` int unsigned NOT NULL AUTO_INCREMENT,
   `BrotherID` int unsigned NOT NULL,
@@ -119,7 +119,7 @@ CREATE TABLE `comments` (
   `WhichID` int unsigned NOT NULL,
   PRIMARY KEY (`CommentID`),
   UNIQUE KEY `CommentID` (`CommentID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -138,7 +138,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `events`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `events` (
   `EventID` int NOT NULL AUTO_INCREMENT,
   `EventTitle` varchar(100) NOT NULL,
@@ -147,7 +147,7 @@ CREATE TABLE `events` (
   `EventDescription` text NOT NULL,
   PRIMARY KEY (`EventID`),
   UNIQUE KEY `EventID` (`EventID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -166,7 +166,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `merchandise`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `merchandise` (
   `MerchID` int NOT NULL AUTO_INCREMENT,
   `MerchName` varchar(100) NOT NULL,
@@ -175,7 +175,7 @@ CREATE TABLE `merchandise` (
   `MerchImgFilePath` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`MerchID`),
   UNIQUE KEY `MerchID` (`MerchID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
