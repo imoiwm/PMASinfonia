@@ -1,11 +1,34 @@
 <?php
 include_once("container.php");
+/*
+ * Contains the information for the merchandise table
+ * Extends from Container class
+ */
 class Merchandise extends Container {
-    private int $id;
+    private int $id; // the id of the merch
+
+    /*
+     * Constructor of the merchandise class
+     * Preconditions: none
+     * Postconditions: none
+     * Parameters:
+     * $it: associative array to feed to $this->ar
+     * Returns: none
+     */
     function __construct($it) {
         parent::__construct($it);
     }
 
+    /*
+     * Gets the information of a container in html
+     * Preconditions: none
+     * Postconditions: none
+     * Parameters: none
+     * Returns:
+     * The information in a html formatted string
+     * Includes:
+     * ID, Picture, Name, Quantity, Description
+     */
     function info(): string {
         return "<a href=\"reviews.php?which=m&id=" . ($this->id = parent::getArray()["ID"]) . "\">
         <div class=\"merch\" id=\"merch-" . $this->id . "\">
@@ -22,6 +45,27 @@ class Merchandise extends Container {
         </div>
         </div>
         </a>";
+    }
+
+    /*
+     * Gets the information of a container in xml
+     * Preconditions: none
+     * Postconditions: none
+     * Parameters: none
+     * Returns:
+     * The information in a xml formatted string
+     * Includes:
+     * ID, Picture, Name, Quantity, Description
+     */
+    function xmlInfo(): string {
+        return "<MERCH>
+        <LINK>" . ($this->id = parent::getArray()["ID"]) . "</LINK>
+        <ID>" . $this->id . "</ID>
+        <IMGPATH>" . parent::checkPicture(parent::getArray()["Picture"]) . "</IMGPATH>
+        <NAME>" . parent::getArray()["MerchName"] . "</NAME>
+        <QUANTITY>" . parent::getArray()["MerchQuantity"] . "</QUANTITY>
+        <DESCRIPTION>" . parent::getArray()["MerchDescription"] . "</DESCRIPTION>
+        </MERCH>";
     }
 }
 ?>

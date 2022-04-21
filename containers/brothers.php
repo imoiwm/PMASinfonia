@@ -1,16 +1,40 @@
 <?php
 include_once("container.php");
+/*
+ * Contains the information for the brothers table
+ * Extends from Container class
+ */
 class Brothers extends Container {
-    private int $id = 0;
+    private int $id = 0; // the id of the brother
+
+    /*
+     * Constructor of the brothers class
+     * Preconditions: none
+     * Postconditions: none
+     * Parameters:
+     * $it: associative array to feed to $this->ar
+     * Returns: none
+     */
     function __construct($it) {
         parent::__construct($it);
         $this->id = $it["ID"];
     }
 
+    /* override of container class */
     function getID(): int {
         return $this->id;
     }
 
+    /*
+     * Gets the minimal information of a container in html
+     * Preconditions: none
+     * Postconditions: none
+     * Parameters: none
+     * Returns:
+     * The information in a html formatted string
+     * Includes:
+     * FullName, ID, Picture
+     */
     function info(): string {
         $fullName = parent::getArray()["FirstName"] . " " . parent::getArray()["LastName"];
         return "<div class=\"brother\" id=\"brother-" . ($this->id = parent::getArray()["ID"]) . "\">
@@ -21,6 +45,16 @@ class Brothers extends Container {
         </div>";
     }
 
+    /*
+     * Gets the maximum information of a container in html
+     * Preconditions: none
+     * Postconditions: none
+     * Parameters: none
+     * Returns:
+     * The information in a html formatted string
+     * Includes:
+     * FullName, ID, Picture, Email, Bio
+     */
     function maxInfo(): string {
         $fullName = parent::getArray()["FirstName"] . " " . parent::getArray()["LastName"];
         return '<div class="brother" id="brother-' . ($this->id = parent::getArray()["ID"]) . '">
@@ -55,6 +89,27 @@ class Brothers extends Container {
         </form>
         </section>
         </div>';
+    }
+
+    /*
+     * Gets the information of a container in xml
+     * Preconditions: none
+     * Postconditions: none
+     * Parameters: none
+     * Returns:
+     * The information in a xml formatted string
+     * Includes:
+     * FullName, ID, Picture, Email, Bio
+     */
+    function xmlInfo(): string {
+        $fullName = parent::getArray()["FirstName"] . " " . parent::getArray()["LastName"];
+        return '<BROTHER>
+        <ID>' . ($this->id = parent::getArray()["ID"]) . '</ID>
+        <IMGPATH>' . parent::checkPicture(parent::getArray()["Picture"]) . '</IMGPATH>
+        <NAME>' . $fullName . '</NAME>
+        <EMAIL>' . htmlspecialchars(parent::getArray()["Email"]) . '</EMAIL>
+        <BIO>' . htmlspecialchars(parent::getArray()["Bio"]) . '</BIO>
+        </BROTHER>';
     }
 }
 ?>

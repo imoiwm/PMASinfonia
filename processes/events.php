@@ -1,7 +1,7 @@
 <?php
 require("../containers/events.php");
 require_once("../private/defined.php");
-$conn = false;
+$conn = false; // if there are no events
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <ROOT>";
 try {
@@ -17,19 +17,19 @@ try {
        $conn = true;
        $ev = new Events($it);
        echo $ev->xmlInfo();
-   }
-   $stmt->closeCursor();
+   } // for each event, parse it into xml
+   $stmt->closeCursor(); // close the cursor
 } catch(PDOException $e) {
     $conn = true;
   echo "<ERROR>Connection failed: Sorry, we could not connect with the server.
    Try again in a few hours.</ERROR>" /*. $e->getMessage()*/;
-   http_response_code(500);
-   echo "</ROOT>";
-   exit();
-}
+   http_response_code(500); // give a server error
+   echo "</ROOT>"; // close the root
+   exit(); // exit
+} // if it craches, give error code
 if (!$conn) {
     echo "<EVENT>There are currently no upcoming events yet.</EVENT>";
-}
+} // if there are no events, artificially create an event
 echo "
-</ROOT>";
+</ROOT>"; // close root
 ?>

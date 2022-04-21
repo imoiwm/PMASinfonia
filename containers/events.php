@@ -1,11 +1,34 @@
 <?php
 include_once("container.php");
+/*
+ * Contains the information for the comments table
+ * Extends from Container class
+ */
 class Events extends Container {
-    private int $id = 0;
+    private int $id = 0; // the id of the event
+
+    /*
+     * Constructor of the events class
+     * Preconditions: none
+     * Postconditions: none
+     * Parameters:
+     * $it: associative array to feed to $this->ar
+     * Returns: none
+     */
     function __construct($it) {
         parent::__construct($it);
     }
 
+    /*
+     * Gets the information of a container in html
+     * Preconditions: none
+     * Postconditions: none
+     * Parameters: none
+     * Returns:
+     * The information in a html formatted string
+     * Includes:
+     * ID, Title, Date, Location, Description
+     */
     function info(): string {
         return "<a href=\"reviews.php?which=e&id=" . ($this->id = parent::getArray()["ID"]) . "\">
         <div class=\"event\" id=\"event-" . ($this->id = parent::getArray()["ID"]) . "\">
@@ -21,6 +44,16 @@ class Events extends Container {
         </a>";
     }
 
+    /*
+     * Gets the information of a container in xml
+     * Preconditions: none
+     * Postconditions: none
+     * Parameters: none
+     * Returns:
+     * The information in a xml formatted string
+     * Includes:
+     * ID, Title, Date, Location, Description
+     */
     function xmlInfo(): string {
         return "
         <EVENT>

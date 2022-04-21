@@ -6,21 +6,11 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 require("../vendor/autoload.php");
 
-//PHPMailer Object
-$mail = new PHPMailer(true); //Argument true in constructor enables exceptions
-
-$mail->Host = "ssl://smtp.gmail.com:465";
-$mail->Username = ADDRESS;
-$mail->Password = PASSWORD;
-
-//From email address and name
-$mail->SetFrom(ADDRESS, NAME, 0);
-
-
-//Address to which recipient will reply
-$mail->addReplyTo(ADDRESS, "Reply");
-
-
-//Send HTML or Plain Text email
-$mail->isHTML(true);
+$mail = new PHPMailer(true); // enable exceptions
+$mail->Host = "ssl://smtp.gmail.com:465"; // set the host (for gmail addresses)
+$mail->Username = ADDRESS; // set the email username
+$mail->Password = PASSWORD; // set the email pasword
+$mail->SetFrom(ADDRESS, NAME, 0); //Set the address and name
+$mail->addReplyTo(ADDRESS, "Reply"); //Set the reply address
+$mail->isHTML(true); //Set body to HTML
 ?>
