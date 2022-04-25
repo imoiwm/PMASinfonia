@@ -1,6 +1,12 @@
 <?php
 
 function head(): void {
+    if (session_status() != PHP_SESSION_ACTIVE) {
+        session_start();
+    }
+    $se = isset($_SESSION["User"]) && isset($_SESSION["Pass"]);
+    $link = (!$se) ? "login.php" : "processes/signout.php";
+    $name = (!$se) ? "Log in" : "Sign out";
     echo '<header id="global-head">
             <a href="about.php">
                 <img class="logo" src="img/logo.png" alt="Phi Mu Alpha Sinfonia Logo">
@@ -13,7 +19,7 @@ function head(): void {
                     ><li class="nav-list"><a href="listOfBrothers.php" class="nav-buttons"> Brothers </a></li
                     ><li class="nav-list"><a href="calendar.php" class="nav-buttons"> Calendar </a></li
                     ><li class="nav-list"><a href="contact.php" class="nav-buttons"> Contact </a></li
-                    ><li class="nav-list"><a href="login.php" class="nav-buttons"> Log in </a></li
+                    ><li class="nav-list"><a href="'. $link . '" class="nav-buttons">' . $name . '</a></li
                     ><li class="nav-list"><a href="history.php" class="nav-buttons"> History </a></li
                     ><li class="nav-list"><a href="about.php" class="nav-buttons"> About </a></li>
                 </ul>
