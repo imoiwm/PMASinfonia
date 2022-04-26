@@ -6,7 +6,7 @@
         <?php headInfo("Merchandise", "Merch, Products", ["merch"]); ?>
     </head>
     <body id="merch-body">
-        <?php head(); ?>
+        <?php head(5); ?>
         <div id="view">
             <h1>Merchandise</h1>
             <hr/>

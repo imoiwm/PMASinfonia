@@ -21,7 +21,7 @@
         </script>
     </head>
     <body>
-        <?php head(); ?>
+        <?php head(6); ?>
         <div id="pane">
             <section id="right-side">
                 <form id="contact-form" action="javascript:compose()">

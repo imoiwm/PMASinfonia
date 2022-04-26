@@ -2,11 +2,11 @@
 <?php require_once("template.php"); ?>
 <html lang="en-US">
     <head>
-        <title>About Us</title>
-        <?php headInfo("Aubout Us", "About, About Us", []); ?>
+        <title>Home</title>
+        <?php headInfo("Home Page", "Home, Home Page", []); ?>
     </head>
     <body>
-        <?php head(); ?>
+        <?php head(0); ?>
         <br>
         <br>
         <br>

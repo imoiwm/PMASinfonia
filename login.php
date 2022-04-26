@@ -16,7 +16,7 @@ require_once("template.php")
         ?>
     </head>
     <body>
-        <?php head(); ?>
+        <?php head(1); ?>
         <img id="bigLogo" src="img/logo_solo_white.png" />
         <form id="signInForm" method="post" action="brother.php" onsubmit="return validate('signInForm');">
             <label id="userLabel" for="user">Username:</label>

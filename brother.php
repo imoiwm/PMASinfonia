@@ -29,7 +29,7 @@ if (!$initialized) {
         <?php
         include("containers/brothers.php");
         include_once("private/defined.php");
-        head();
+        head(2);
          $conn = false;
          try {
             if ($test === null) exit();
@@ -67,6 +67,7 @@ if (!$initialized) {
              echo "<p>There are no brothers by that username yet.</p>";
              session_unset();
          }
+         echo '<a href="processes/signout.php">Sign Out</a>';
          echo "</div>";
          foot();
         ?>
