@@ -31,9 +31,9 @@ class Comments extends Container {
      */
     function info(): string {
         $str = (parent::getArray()["Liked"]) ? "Liked" : "Disliked";
-        return "<div class=\"comment\" id=\"comment-" . ($this->id = parent::getArray()["ID"]) . "\">
-        <p class=\"comment-text\">" . parent::getArray()["Text"] . "</p>
-        <span class=\"comment-liked\">" . parent::getArray()["BrotherName"] . " " . $str . "</span>
+        return "<div class=\"card mb-3\" id=\"comment-" . ($this->id = parent::getArray()["ID"]) . "\">
+        <div class=\"card-body\">" . parent::getArray()["Text"] . "</div>
+        <div class=\"card-footer\"><small>" . parent::getArray()["BrotherName"] . " " . $str . "</small></div>
         </div>";
     }
 

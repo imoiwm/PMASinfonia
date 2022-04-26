@@ -45,6 +45,29 @@ class Events extends Container {
     }
 
     /*
+     * Gets the information of a container in html
+     * Preconditions: none
+     * Postconditions: none
+     * Parameters: none
+     * Returns:
+     * The information in a html formatted string
+     * Includes:
+     * ID, Title, Date, Location, Description
+     */
+    function reviewInfo(): string {
+        return "<div class=\"container bg-secondary\" id=\"event-" . ($this->id = parent::getArray()["ID"]) . "\">
+        <header class=\"row\">
+        <h3 class=\"col-4\">" . parent::getArray()["EventTitle"] . "</h3>
+        <div class=\"col-8\">
+        <p class=\"event-date\">" . parent::getArray()["EventDay"] . "</p>
+        <address class=\"event-location\">" . parent::getArray()["EventLocation"] . "</address>
+        </div>
+        </header>
+        <p class=\"event-description\">" . parent::getArray()["EventDescription"] . "</p>
+        </div>";
+    }
+
+    /*
      * Gets the information of a container in xml
      * Preconditions: none
      * Postconditions: none
