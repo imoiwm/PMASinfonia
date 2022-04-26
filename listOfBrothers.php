@@ -11,7 +11,7 @@
         <?php
          echo   "<div class=\"brothers-collection\">";
          include("containers/brothers.php");
-         include_once("private/defined.php");
+         require_once("private/defined.php");
          $conn = false;
          try {
             if ($test === null) exit();
