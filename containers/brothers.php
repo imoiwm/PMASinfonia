@@ -13,11 +13,11 @@ class Brothers extends Container {
 
     function info(): string {
         $fullName = parent::getArray()["FirstName"] . " " . parent::getArray()["LastName"];
-        return "<div class=\"brother\" id=\"brother-" . ($this->id = parent::getArray()["ID"]) . "\">
-        <img class=\"brother-picture\" src=\"" . parent::checkPicture(parent::getArray()["Picture"]) . "\" alt=\"$fullName's picture\"/>
-        <header class=\"brother-header\">
-        <h3 class=\"brother-name\">$fullName</h3>
-        </header>
+        return "<div class=\"card\" id=\"brother-" . ($this->id = parent::getArray()["ID"]) . "\" style=\"width: 18rem;\">
+        <img class=\"card-img-top\" src=\"" . parent::checkPicture(parent::getArray()["Picture"]) . "\" alt=\"$fullName's picture\"/>
+        <div class=\"card-body\">
+        <p class=\"card-text\">$fullName</p>
+        </div>
         </div>";
     }
 
