@@ -1,17 +1,26 @@
 <?php
 
+/*
+ * The header of the page.
+ * Preconditions: none
+ * Postconditions: header is printed to the screen.
+ * Parameters:
+ * int $whichActive the number to denote which item is active
+ *     from 0-6, if outside of 0-6, no item is labeled active.
+ * Returns: none.
+ */
 function head(int $whichActive = -1): void {
     if (session_status() != PHP_SESSION_ACTIVE) {
         session_start();
-    }
-    $which = ["", "", "", "", "", "", ""];
+    } // if session has not already started, start it
+    $which = ["", "", "", "", "", "", ""]; // initialize array of empties
     if ($whichActive >= 0 && $whichActive < 7) {
         $which[$whichActive] .= "active";
-    }
-    $se = isset($_SESSION["User"]) && isset($_SESSION["Pass"]);
-    $link = (!$se) ? "login.php" : "brother.php";
-    $name = (!$se) ? "Login" : "Profile";
-    echo '<!--Bootstrap navbar w/ History highlighted-->
+    } // if $whichActive is in acceptable range, make the corresponding string "active"
+    $se = isset($_SESSION["User"]) && isset($_SESSION["Pass"]); // see if user is logged in
+    $link = (!$se) ? "login.php" : "brother.php"; // link for changing item
+    $name = (!$se) ? "Login" : "Profile"; // name for changing item
+    echo '<!--Bootstrap navbar w/ One item highlighted-->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
@@ -50,6 +59,13 @@ function head(int $whichActive = -1): void {
             </nav>';
 }
 
+/*
+ * The footer of the page.
+ * Preconditions: none
+ * Postconditions: footer is printed to the screen.
+ * Parameters: none
+ * Returns: none.
+ */
 function foot(): void {
     echo '<footer class="footer mt-auto py-3 bg-light">
             <div class="container">
@@ -58,18 +74,50 @@ function foot(): void {
         </footer>';
 }
 
+/*
+ * A css file for a page.
+ * Preconditions: $fileName must match file in styles/
+ * Postconditions: css file is added.
+ * Parameters:
+ * string $fileName the filename (not including extension or path).
+ * Returns: none.
+ */
 function cssFile(string $fileName = "global"): void {
     echo '<link rel="stylesheet" type="text/css" href="styles/' . $fileName . '.css">';
 }
 
+/*
+ * A javascript file for a page.
+ * Preconditions: $fileName must match file in the current directory
+ * Postconditions: javascript file is added.
+ * Parameters:
+ * string $fileName the filename (not including extension or path).
+ * Returns: none.
+ */
 function jsFile(string $fileName = "global"): void {
     echo '<script src="' . $fileName . '.js"></script>';
 }
 
+/*
+ * A favicon file for a page.
+ * Preconditions: none
+ * Postconditions: favicon image is added.
+ * Parameters: none.
+ * Returns: none.
+ */
 function favicon(): void {
     echo '<link rel="icon" type="image/x-icon" href="img/favicon.ico">';
 }
 
+/*
+ * Various meta tags are added to a page.
+ * Preconditions: none.
+ * Postconditions: meta tags added.
+ * Parameters:
+ * string $description the description for the description section.
+ * string $keywords the keywords for the keywords section
+ * Returns: none.
+ */
 function meta(string $description = "Phi Mu Alpha Sinfonia Page", 
     string $keywords = "PMA Sinfonia UGA, UGA Chapter, Phi Mu Alpha Sinfonia UGA"): void {
     echo '<meta charset="UTF-8">
@@ -79,15 +127,25 @@ function meta(string $description = "Phi Mu Alpha Sinfonia Page",
         <meta name="viewport" content="width=device-width, initial-scale=1">';
 }
 
+/*
+ * Adds the general tags for the head section.
+ * Preconditions: none.
+ * Postconditions: tags added.
+ * Parameters:
+ * string $description the description for the description section.
+ * string $keywords the keywords for the keywords section.
+ * array $cssFiles the filenames for external css files to be added.
+ * Returns: none.
+ */
 function headInfo(string $description, string $keywords, array $cssFiles = []): void {
     meta("Phi Mu Alpha Sinfonia UGA Chapter $description Page", "PMA Sinfonia UGA, UGA Chapter, Phi Mu Alpha Sinfonia UGA, " . $keywords);
     echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="stylesheet" href="styles/bsstyle.css">';
-    favicon();
-    cssFile("normalize");
-    cssFile();
+        <link rel="stylesheet" href="styles/bsstyle.css">'; // bootstrap
+    favicon(); // favicon for page
+    cssFile("normalize"); // normalize css file for browsers
+    cssFile(); // global css file
     foreach($cssFiles as $file) {
         cssFile($file);
-    }
+    } // for each string in the array, add it
 }
 ?>
