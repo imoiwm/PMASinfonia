@@ -156,7 +156,10 @@ CREATE TABLE `events` (
 
 LOCK TABLES `events` WRITE;
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
-INSERT INTO `events` VALUES (1,'Get Together','2022-11-11','115 Epps Bridge Highway','Tonight, we would like to get to know everyone better.'),(2,'Jam Out','2022-10-11','Frat','Tonight, we jam out. Bring your own music, if you know what I mean.');
+INSERT INTO `events` VALUES 
+(1,'Musicale','2022-4-30','Edge Hall','Come out and view our Musicale!'),
+(2,'Chapter','2022-5-1','Orchestra Room','Weekly Chapter Meeting'),
+(3,'Round Table','2022-5-7','TBD','Big Long meeting');
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -184,7 +187,11 @@ CREATE TABLE `merchandise` (
 
 LOCK TABLES `merchandise` WRITE;
 /*!40000 ALTER TABLE `merchandise` DISABLE KEYS */;
-INSERT INTO `merchandise` VALUES (1,'Scam Material',25,'The hottest book series out there right now!',NULL);
+INSERT INTO `merchandise` VALUES (1,'Sinfonian Glass',28,'Glass from the Terrapin formal event','./img/merch/sinfonianglass.png'),
+(2,'Koozie',56,'Phi Mu Alpha Koozie','./img/merch/koozie.png'),
+(3,'2019 Florida Shirt',18,'Shirt from the 2019 Florida vs UGA football game. Longsleeve','./img/merch/floridashirt.png'),
+(4,'2018 JanFest Shirt',4,'Shirt from the 2018 JanFest Festival. Shortsleeve','./img/merch/janfestshirt.png');
+
 /*!40000 ALTER TABLE `merchandise` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

@@ -22,7 +22,7 @@
     </head>
     <body>
         <?php head(6); ?>
-        <div style="margin-left:100px">
+        <div style="margin-left:70px">
             <p>Leave us a message and we will get back to you as soon as possible!</p>
         </div>
         <form id="contact-form" action="javascript:compose()">
