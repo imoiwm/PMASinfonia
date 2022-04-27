@@ -1,9 +1,8 @@
-* {
-    font-family: 'Roboto';
-    font-style: normal;
+label,input {
     font-weight: 400;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 14px;
+    padding-left: 20px;
 }
 
 input[type="email"], input[type="text"], textarea {
@@ -14,15 +13,19 @@ input[type="email"], input[type="text"], textarea {
 }
 
 input[type="text"], input[type="email"] {
-    height: 20px;
     width: 100%;
 }
 
 .text {
     display: flex;
     align-items: center;
-
     color: #000000;
+    font-size: 16px;
+}
+
+.btnpad {
+    padding-left: 10px;
+    margin-left: 10px;
 }
 
 div#pane {
@@ -32,6 +35,7 @@ div#pane {
     justify-content: space-between;
     width: 85%;
     margin: auto;
+
 }
 
 section {
@@ -57,15 +61,11 @@ textarea {
 }
 
 .right-col {
-    width: 100px;
+    width: 50px;
 }
 
 .left-col {
     text-align: center;
-}
-
-table {
-    height: 90%;
 }
 
 a.middle-text {

@@ -22,22 +22,22 @@
     </head>
     <body>
         <?php head(6); ?>
+        <div style="margin-left:100px">
+            <p>Leave us a message and we will get back to you as soon as possible!</p>
+        </div>
         <form id="contact-form" action="javascript:compose()">
-            <div class="form-row">
+            <div class="form-row" style="padding-left:10px;">
                 <div class="form-group col-md-6">
-                <label for="name">Name</label>
-                <input class="form-control" type="name" name="name" type="text" placeholder="Your Name" autofocus required>
+                <input class="form-control" type="name" name="name" type="text" placeholder="Your Name" style="margin-bottom:10px;width:524px" autofocus required>
                 </div>
                 <div class="form-group col-md-6">
-                <label for="email">Email</label>
-                <input class="form-control" id="email" name="email" type="email" placeholder="Your Email" required/>
+                <input class="form-control" id="email" name="email" type="email" placeholder="Your Email" style="margin-bottom:10px;width:524px" required/>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="message">Your Message</label>
+            <div class="form-group" style="width:534px;padding-left:10px;">
                 <textarea class="form-control form-id" id="message" name="message" placeholder="Your Message" maxlength="2000" rows="3" required></textarea>
             </div>
-            <button class="btn btn-primary" type="submit" value="Send">Send</button>
+            <button class="btn btn-primary btnpad" type="submit" value="Send">Send</button>
         </form>
 <!-- separator between Justin's work and Bootstrap template -->
         <div id="pane">
