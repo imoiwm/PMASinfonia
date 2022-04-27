@@ -48,6 +48,32 @@ class Merchandise extends Container {
     }
 
     /*
+     * Gets the information of a container in html
+     * Preconditions: none
+     * Postconditions: none
+     * Parameters: none
+     * Returns:
+     * The information in a html formatted string
+     * Includes:
+     * ID, Picture, Name, Quantity, Description
+     */
+    function reviewInfo(): string {
+        return "<div class=\"container-fluid row bg-secondary rounded\" id=\"merch-" . ($this->id = parent::getArray()["ID"]) . "\">
+        <img class=\"merch-image col-4\" src=\"" . parent::checkPicture(parent::getArray()["Picture"]) . "\" alt=\"Merchandise Photo\"/>
+        <div class=\"merch-other col-8\">
+        <header class=\"row\">
+        <h3 class=\"col-4\">" . parent::getArray()["MerchName"] . "</h3>
+        <div class=\"col-8\">
+        <p class=\"merch-quantity\">Quantity: " . parent::getArray()["MerchQuantity"] . "</p>
+        </div>
+        </header>
+        <hr class=\"merch-hr\"/>
+        <p class=\"merch-description\">" . parent::getArray()["MerchDescription"] . "</p>
+        </div>
+        </div>";
+    }
+
+    /*
      * Gets the information of a container in xml
      * Preconditions: none
      * Postconditions: none

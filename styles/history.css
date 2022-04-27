@@ -37,9 +37,12 @@ section {
 .para {
     font-family:'Garamond', Tserif;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-size: 40px;
     text-align: center;
 =======
+=======
+>>>>>>> origin/main
     font-size: 20px;
     text-align: center;
     margin-left: 10em;
@@ -56,5 +59,8 @@ blockquote {
     margin-bottom: 1em;
     margin-left: 10em;
     margin-right: 10em;
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
 >>>>>>> origin/main
 }

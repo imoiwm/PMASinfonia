@@ -12,7 +12,7 @@ session_start();
         <title>Merch Page</title>
         <?php
         headInfo("Reviews", "Merch Reviews, Event Comments", ["review"]);
-        jsFile("validate");
+        jsFile("validate"); // to validate input
         ?>
     </head>
     <body id="review-body">
@@ -42,12 +42,28 @@ session_start();
                     $conn = true;
                     $ev = ($_GET["which"] === 'm') ? new Merchandise($it) : new Events($it);
                     if (filter_var($_GET["id"], FILTER_SANITIZE_NUMBER_INT) != $ev->getID()) continue;
-                    echo $ev->info();
+                    echo $ev->reviewInfo();
                     break;
                 }
                 $stmt->closeCursor();
 
+                if (isset($_SESSION["User"]) && isset($_SESSION["Pass"])) {
+                    echo '<form class="container mb-3 mt-3 bg-light rounded" id="brother-comment-form" method="post" action="processes/comment.php" onsubmit="return validateTextArea(\'brother-comment-form\');">
+                    <input type="hidden" id="wh" name="wh" value="' . $_GET["which"] . '"/>
+                    <input type="hidden" id="whid" name="whid" value="' . $_GET["id"] . '"/>
+                    <label class="form-label" for="text">Comment:</label>
+                    <textarea class="form-control" name="text" id="text" maxlength="1900" required></textarea>
+                    <div class="form-check">
+                    <label for="liked" class="form-check-label">Like</label>
+                    <input type="checkbox" class="form-check-input" name="liked" id="liked"/>
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Comment"/>
+                    </form>';
+                } // if user is logged in, let them comment on the event/merch
+
                 // Comments
+                echo '<div class="container" id="comments">
+                    <h3>Comments:</h3>';
                 $stmt = $test->prepare("CALL getComments(:wh, :whid);");
                 $stmt->bindParam(":wh", $which);
                 $stmt->bindParam(":whid", $id);
@@ -62,6 +78,7 @@ session_start();
                     echo $ev->info();
                 }
                 $stmt->closeCursor();
+                echo "</div>";
              } catch(PDOException $e) {
                  $conn = true;
                echo "<h1><b>Connection failed:</b></h1>\n<p>Sorry, we could not connect with the server.
@@ -69,21 +86,6 @@ session_start();
              }
              if (!$conn) {
                  echo "<p>There are no items yet.</p>";
-             }
-
-             if (isset($_SESSION["User"]) && isset($_SESSION["Pass"])) {
-                 echo '<form id="brother-comment-form" method="post" action="processes/comment.php" onsubmit="return validateTextArea(\'brother-comment-form\');">
-                 <input type="hidden" id="wh" name="wh" value="' . $_GET["which"] . '"/>
-                 <input type="hidden" id="whid" name="whid" value="' . $_GET["id"] . '"/>
-                 <label for"liked">Liked:</label>
-                 <input type="checkbox" name="liked" id="liked"/>
-                 <br/>
-                 <label for"text">Comment:</label>
-                 <textarea name="text" id="text" maxlength="1900" required></textarea>
-                 <br/>
-                 <input type="submit" value="Comment"/>
-                 <br/>
-                 </form>';
              }
             ?>
         </div>
