@@ -9,7 +9,7 @@ body {
      color: rgba(255, 255, 255, 1);
      margin: 0;
      padding: 0;
-     background: #CC0000;
+     background: #4A4A4A;
      -webkit-touch-callout: none;
      -webkit-user-select: none;
      -khtml-user-select: none;
@@ -73,7 +73,7 @@ body {
 }
     
 .month.new {
-      -webkit-animation: fadeIn 1s ease-out;
+      /*-webkit-animation: fadeIn 1s ease-out;*/
       opacity: 1;
 }
     

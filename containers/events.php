@@ -55,7 +55,7 @@ class Events extends Container {
      * ID, Title, Date, Location, Description
      */
     function reviewInfo(): string {
-        return "<div class=\"container bg-secondary rounded\" id=\"event-" . ($this->id = parent::getArray()["ID"]) . "\">
+        return "<div class=\"container rounded\" id=\"event-" . ($this->id = parent::getArray()["ID"]) . "\">
         <header class=\"row\">
         <h3 class=\"col-4\">" . parent::getArray()["EventTitle"] . "</h3>
         <div class=\"col-8\">
