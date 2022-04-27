@@ -24,8 +24,8 @@ function head(int $whichActive = -1): void {
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
-                        <span class="pma">ΦMA</span>
-                        <span class="dawgs">Dawgs</span>
+                        <span class="pma">ΦMA - </span>
+                        <span class="dawgs">ΕΛ</span>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -51,7 +51,7 @@ function head(int $whichActive = -1): void {
                         <a class="nav-link ' . $which[5] . '" href="merchPage.php">Merchandise</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link ' . $which[6] . '" href="contact.php">Contact Us</a>
+                        <a class="nav-link ' . $which[6] . '" href="bscontact.php">Contact Us</a>
                         </li>
                     </ul>
                     </div>
