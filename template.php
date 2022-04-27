@@ -54,7 +54,7 @@ function head(int $whichActive = -1): void {
                         <a class="nav-link ' . $which[5] . '" href="merchPage.php">Merchandise</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link ' . $which[6] . '" href="contact.php">Contact Us</a>
+                        <a class="nav-link ' . $which[6] . '" href="bscontact.php">Contact Us</a>
                         </li>
                         ' . $signOut . '
                     </ul>
