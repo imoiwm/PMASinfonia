@@ -30,21 +30,35 @@ class Merchandise extends Container {
      * ID, Picture, Name, Quantity, Description
      */
     function info(): string {
-        return "<a href=\"reviews.php?which=m&id=" . ($this->id = parent::getArray()["ID"]) . "\">
-        <div class=\"merch\" id=\"merch-" . $this->id . "\">
-        <img class=\"merch-image\" src=\"" . parent::checkPicture(parent::getArray()["Picture"]) . "\" alt=\"Merchandise Photo\"/>
-        <div class=\"merch-other\">
-        <header class=\"merch-header\">
-        <h3 class=\"merch-name\">" . parent::getArray()["MerchName"] . "</h3>
-        <div class=\"date-location\">
-        <p class=\"merch-quantity\">Quantity: " . parent::getArray()["MerchQuantity"] . "</p>
+        return "
+        <div class=\"card\" style=\"width: 18rem;\" id=\"merch-" . parent::getArray()["ID"] . "\">
+        <img class=\"card-img-top\" alt=\"...\" src=\"" . parent::checkPicture(parent::getArray()["Picture"]) . "\" alt=\"Merchandise Photo\"/>
+        <div class=\"card-body\">
+            <h5 class=\"card-title\">"  . parent::getArray()["MerchName"] . "</h5>
+            <p class=\"card-text\">" . parent::getArray()["MerchDescription"] . "</p>
         </div>
-        </header>
-        <hr class=\"merch-hr\"/>
-        <p class=\"merch-description\">" . parent::getArray()["MerchDescription"] . "</p>
-        </div>
-        </div>
-        </a>";
+        <ul class=\"list-group list-group-flush\">
+            <li class=\"list-group-item\">Only " . parent::getArray()["MerchQuantity"] . " left!</li>
+        </ul>
+        <div class=\"card-body\">
+            <a href=\"reviews.php?which=m&id=" . parent::getArray()["ID"] . "\"> Reviews</a>
+        </div>";
+        
+/* 
+         <div class=\"card\" id=\"merch-" . $this->id . "\">
+         <img class=\"card-img-top\" src=\"" . parent::checkPicture(parent::getArray()["Picture"]) . "\" alt=\"Merchandise Photo\"/>
+         <header class=\"merch-header\">
+         <h3 class=\"card-title\">" . parent::getArray()["MerchName"] . "</h3>
+         <div class=\"date-location\">
+         <p class=\"card-text\">Quantity: " . parent::getArray()["MerchQuantity"] . "</p>
+         </div>
+         </header>
+         <hr class=\"merch-hr\"/>
+         <p class=\"card-text\">" . parent::getArray()["MerchDescription"] . "</p>
+         </div>
+         </a>"; 
+*/
+
     }
 
     /*
