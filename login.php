@@ -25,12 +25,14 @@ require_once("template.php")
             <input type="password" id="pass" name="pass" minlength="15" maxlength="30" pattern="[!-@A-Za-z]{15,30}" required><label for="pass" class="desc">Must be 15-30 characters in length</label><br/>
             <input type="submit" id="submit-button" class="submit-button" name="submit" value="Submit">
         </form>
-        <p>Can't Remember Your Password?</p>
-        <form id="passwordRandom" method="post" action="processes/email.php" onsubmit="return validate('passwordRandom');">
-            <label for="usern">Username: </label>
-            <input type="text" id="usern" name="user" maxlength="255" pattern="[!-@A-Za-z]{4,255}" required> |
-            <input type="submit" id="submit-button2" class="submit-button" name="submit" value="Reset Password">
-        </form>
+        <div class="container text-center mt-4 bg-light rounded">
+            <p>Can't Remember Your Password?</p>
+            <form id="passwordRandom" method="post" action="processes/email.php" onsubmit="return validate('passwordRandom');">
+                <label for="usern">Username: </label>
+                <input type="text" id="usern" name="user" maxlength="255" pattern="[!-@A-Za-z]{4,255}" required> |
+                <input type="submit" id="submit-button2" class="submit-button" name="submit" value="Reset Password">
+            </form>
+        </div>
         <?php foot(); ?>
     </body>
 </html>
