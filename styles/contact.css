@@ -50,12 +50,14 @@ textarea {
     resize: none;
 }
 
-img.svg-img {
-    width: 80%;
+.svg-img {
+    width: 100px;
+    height: 100px;
+    display: block;
 }
 
 .right-col {
-    width: 45px;
+    width: 100px;
 }
 
 .left-col {
