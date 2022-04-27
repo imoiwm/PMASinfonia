@@ -3,6 +3,15 @@ h1 {
     font-size: 70px;
 }
 
+<<<<<<< HEAD
+=======
+h2 {
+    text-align: center;
+    font-size: 30px;
+    color:#CC0000;
+}
+
+>>>>>>> origin/main
 img#bigLogo {
     display: block;
     margin-left: auto;
@@ -30,6 +39,25 @@ section {
 
 .para {
     font-family:'Garamond', Tserif;
+<<<<<<< HEAD
     font-size: 40px;
     text-align: center;
+=======
+    font-size: 20px;
+    text-align: center;
+    margin-left: 10em;
+    margin-right: 10em;
+}
+
+blockquote {
+    background: #f5f5f5;
+    font: 16px/20px PTSansItalic,arial,helvetica,sans-serif;
+    color: #444;
+    border-left: 4px solid #CC0000;
+    padding: 5px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 10em;
+    margin-right: 10em;
+>>>>>>> origin/main
 }
