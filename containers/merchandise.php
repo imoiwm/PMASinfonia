@@ -58,7 +58,7 @@ class Merchandise extends Container {
      * ID, Picture, Name, Quantity, Description
      */
     function reviewInfo(): string {
-        return "<div class=\"container-fluid row bg-secondary rounded\" id=\"merch-" . ($this->id = parent::getArray()["ID"]) . "\">
+        return "<div class=\"container-fluid row rounded\" id=\"merch-" . ($this->id = parent::getArray()["ID"]) . "\">
         <img class=\"merch-image col-4\" src=\"" . parent::checkPicture(parent::getArray()["Picture"]) . "\" alt=\"Merchandise Photo\"/>
         <div class=\"merch-other col-8\">
         <header class=\"row\">

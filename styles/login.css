@@ -99,21 +99,15 @@ input#submit-button {
     align-items: center;
     text-align: center;
     
-    
+}
+
+input#submit-button:not(:hover) {
+    background-color: #FEFEFE;
 }
 
 input.submit-button {
-    transition: 300ms;
-    color: #282A2B;
-    background-color: #FEFEFE;
     border-width: thin;
     border-radius: 18px;
-}
-
-input.submit-button:hover {
-    transition: 300ms;
-    color: #FEFEFE;
-    background-color: #931313;
 }
 
 /* sinfonia_img_login */
