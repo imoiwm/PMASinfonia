@@ -25,7 +25,7 @@ require_once("template.php")
             <input type="password" class="form-control" id="pass" name="pass" minlength="15" maxlength="30" pattern="[!-@A-Za-z]{15,30}" required><label for="pass" class="desc">Must be 15-30 characters in length</label><br/>
             <input type="submit" id="submit-button" class="submit-button btn btn-outline-primary" name="submit" value="Submit">
         </form>
-        <div class="container text-center mt-4 bg-light rounded">
+        <div class="container text-center mt-4 mx-auto w-50 bg-light rounded">
             <p>Can't Remember Your Password?</p>
             <form id="passwordRandom" method="post" action="processes/email.php" onsubmit="return validate('passwordRandom');">
                 <div class="input-group">
