@@ -48,13 +48,13 @@ session_start();
                 $stmt->closeCursor();
 
                 if (isset($_SESSION["User"]) && isset($_SESSION["Pass"])) {
-                    echo '<form class="mb-3 mt-3" id="brother-comment-form" method="post" action="processes/comment.php" onsubmit="return validateTextArea(\'brother-comment-form\');">
+                    echo '<form class="container mb-3 mt-3 bg-light rounded" id="brother-comment-form" method="post" action="processes/comment.php" onsubmit="return validateTextArea(\'brother-comment-form\');">
                     <input type="hidden" id="wh" name="wh" value="' . $_GET["which"] . '"/>
                     <input type="hidden" id="whid" name="whid" value="' . $_GET["id"] . '"/>
                     <label class="form-label" for="text">Comment:</label>
                     <textarea class="form-control" name="text" id="text" maxlength="1900" required></textarea>
                     <div class="form-check">
-                    <label for="liked" class="form-check-label">Liked</label>
+                    <label for="liked" class="form-check-label">Like</label>
                     <input type="checkbox" class="form-check-input" name="liked" id="liked"/>
                     </div>
                     <input class="btn btn-primary" type="submit" value="Comment"/>
@@ -62,6 +62,8 @@ session_start();
                 } // if user is logged in, let them comment on the event/merch
 
                 // Comments
+                echo '<div class="container" id="comments">
+                    <h3>Comments:</h3>';
                 $stmt = $test->prepare("CALL getComments(:wh, :whid);");
                 $stmt->bindParam(":wh", $which);
                 $stmt->bindParam(":whid", $id);
@@ -76,6 +78,7 @@ session_start();
                     echo $ev->info();
                 }
                 $stmt->closeCursor();
+                echo "</div>";
              } catch(PDOException $e) {
                  $conn = true;
                echo "<h1><b>Connection failed:</b></h1>\n<p>Sorry, we could not connect with the server.

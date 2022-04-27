@@ -57,35 +57,36 @@ class Brothers extends Container {
      */
     function maxInfo(): string {
         $fullName = parent::getArray()["FirstName"] . " " . parent::getArray()["LastName"];
-        return '<div class="brother" id="brother-' . ($this->id = parent::getArray()["ID"]) . '">
-        <section id="left-section">
+        return '<div class="container-fluid row mt-5" id="brother-' . ($this->id = parent::getArray()["ID"]) . '">
+        <section class="col-6">
         <img class="brother-picture" src="' . parent::checkPicture(parent::getArray()["Picture"]) . '" alt="' . $fullName . '\'s picture"/>
         <form id="image-form" action="processes/changePicture.php" method="post" enctype="multipart/form-data" onsubmit="return validate(\'image-form\');">
-        <label for="image" class="change-button">Choose File
+        <label for="image" class="btn btn-outline-primary mt-2">Choose File
         <input type="file"  class="change-button" name="image" id="image">
         </label>
-        <input class="change-button" type="submit" value="Upload Image">
+        <input class="btn btn-outline-primary mt-2" type="submit" value="Upload Image">
         </form>
         </section>
-        <section id="right-section">
+        <section class="col-6">
         <header class="brother-header">
         <h1 class="brother-name">Welcome, ' . $fullName . '</h1>
         <hr/>
         </header>
         <form id="email-form" action="processes/changeEmail.php" method="post" onsubmit="return validate(\'email-form\');">
         <input type="hidden" id="id" name="id" value="' . $this->id . '">
-        <label for="email" class="text">Email:</label>
-        <input type="email" id="email" class="text-box" name="email" placeholder="no email entered" value="' . htmlspecialchars(parent::getArray()["Email"]) . '" required>
-        <input class="change-button" type="submit" value="Change Email">
+        <label for="email" class="form-label">Email:</label>
+        <div class="input-group">
+        <input type="email" id="email" class="form-control" name="email" placeholder="no email entered" value="' . htmlspecialchars(parent::getArray()["Email"]) . '" required>
+        <input class="btn btn-outline-primary" type="submit" value="Change Email">
+        </div>
         </form>
         <br>
         <form id="bio-form" action="processes/changeBio.php" method="post" onsubmit="return validateTextArea(\'bio-form\');">
-        <label for="bio" class="text">About Me:</label>
-        <textarea id="bio" name="bio" class="text-box" placeholder="no description"  maxlength="2000" required>'
+        <label for="bio" class="form-label">About Me:</label>
+        <textarea id="bio" name="bio" class="form-control mb-2" placeholder="no description"  maxlength="2000" required>'
         . htmlspecialchars(parent::getArray()["Bio"]) .
         '</textarea>
-        <br>
-        <input class="change-button" type="submit" value="Change Bio">
+        <input class="btn btn-outline-primary" type="submit" value="Change Bio">
         </form>
         </section>
         </div>';

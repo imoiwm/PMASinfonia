@@ -20,6 +20,9 @@ function head(int $whichActive = -1): void {
     $se = isset($_SESSION["User"]) && isset($_SESSION["Pass"]); // see if user is logged in
     $link = (!$se) ? "login.php" : "brother.php"; // link for changing item
     $name = (!$se) ? "Login" : "Profile"; // name for changing item
+    $signOut = (!$se) ? '' : '<li class="nav-item">
+                        <a class="nav-link" href="processes/signout.php">Sign Out</a>
+                        </li>'; // the sign out item
     echo '<!--Bootstrap navbar w/ One item highlighted-->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
@@ -53,6 +56,7 @@ function head(int $whichActive = -1): void {
                         <li class="nav-item">
                         <a class="nav-link ' . $which[6] . '" href="contact.php">Contact Us</a>
                         </li>
+                        ' . $signOut . '
                     </ul>
                     </div>
                 </div>
@@ -139,8 +143,8 @@ function meta(string $description = "Phi Mu Alpha Sinfonia Page",
  */
 function headInfo(string $description, string $keywords, array $cssFiles = []): void {
     meta("Phi Mu Alpha Sinfonia UGA Chapter $description Page", "PMA Sinfonia UGA, UGA Chapter, Phi Mu Alpha Sinfonia UGA, " . $keywords);
-    echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="stylesheet" href="styles/bsstyle.css">'; // bootstrap
+    cssFile("bscolors"); // bootstrap with colors changed
+    cssFile("bsstyle"); // some styles
     favicon(); // favicon for page
     cssFile("normalize"); // normalize css file for browsers
     cssFile(); // global css file
