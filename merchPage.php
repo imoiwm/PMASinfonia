@@ -12,6 +12,8 @@
             <hr/>
             <?php
              echo   "<div class=\"merch-collection\">";
+             echo   "<div class=\"container mt-4\">";
+             echo   "<div class=\"row\">";
              include("containers/merchandise.php");
              include_once("private/defined.php");
              $conn = false;
@@ -39,6 +41,9 @@
                  echo "<p>There are no items yet.</p>";
              }
              echo "</div>";
+             echo "</div>";
+             echo "</div>";
+
             ?>
         </div>
         <?php foot(); ?>
