@@ -12,7 +12,7 @@ require_once("template.php")
         <title>Login</title>
         <?php 
         headInfo("Login", "Login, Log in, Logon, Log on", ["login"]);
-        jsFile("validate");
+        jsFile("validate"); // to validate input
         ?>
     </head>
     <body>

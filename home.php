@@ -7,6 +7,7 @@
     </head>
     <body>
         <?php head(0); ?>
+        <!-- Carousel of pictures with dots indicating which picture its on -->
         <div class="d-block w-50" style="margin-left: auto; margin-right: auto">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <ol class="carousel-indicators">

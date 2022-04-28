@@ -4,8 +4,8 @@ require_once("template.php");
 if (!(isset($_GET["which"]) && ($_GET["which"] === 'm' || $_GET["which"] === 'e')) || !(isset($_GET["id"]) && filter_var($_GET["id"], FILTER_VALIDATE_INT))) {
     header("Location: history.php");
     exit();
-}
-session_start();
+} // see if information is given, redirect if not
+session_start(); // start session
 ?>
 <html lang="en-US">
     <head>
@@ -26,26 +26,26 @@ session_start();
              include_once("containers/comments.php");
              include_once("containers/merchandise.php");
              include_once("containers/events.php");
-             include_once("private/defined.php");
-             $conn = false;
-             $proc = ($_GET["which"] === 'm') ? "getMerch()" : "getEvents()";
+             include_once("private/defined.php"); // get required info and classes
+             $conn = false; // empty set
+             $proc = ($_GET["which"] === 'm') ? "getMerch()" : "getEvents()"; // depends on if event or merch
              try {
                 if ($test === null) exit();
                // set the PDO error mode to exception
                $test->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-               $stmt = $test->prepare("CALL $proc;");
-                $stmt->execute();
+               $stmt = $test->prepare("CALL $proc;"); // gets reviewee info
+                $stmt->execute(); // executes
 
                 // set the resulting array to associative
                 $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
                 foreach(new RecursiveArrayIterator($stmt->fetchAll()) as $it) {
-                    $conn = true;
-                    $ev = ($_GET["which"] === 'm') ? new Merchandise($it) : new Events($it);
-                    if (filter_var($_GET["id"], FILTER_SANITIZE_NUMBER_INT) != $ev->getID()) continue;
-                    echo $ev->reviewInfo();
-                    break;
+                    $conn = true; // not empty anymore
+                    $ev = ($_GET["which"] === 'm') ? new Merchandise($it) : new Events($it); // gets container
+                    if (filter_var($_GET["id"], FILTER_SANITIZE_NUMBER_INT) != $ev->getID()) continue; // continues if not the right one
+                    echo $ev->reviewInfo(); // prints review info
+                    break; // found the right one
                 }
-                $stmt->closeCursor();
+                $stmt->closeCursor(); // close cursor
 
                 if (isset($_SESSION["User"]) && isset($_SESSION["Pass"])) {
                     echo '<form class="container mb-3 mt-3 bg-light rounded" id="brother-comment-form" method="post" action="processes/comment.php" onsubmit="return validateTextArea(\'brother-comment-form\');">
@@ -64,29 +64,29 @@ session_start();
                 // Comments
                 echo '<div class="container" id="comments">
                     <h3>Comments:</h3>';
-                $stmt = $test->prepare("CALL getComments(:wh, :whid);");
+                $stmt = $test->prepare("CALL getComments(:wh, :whid);"); // get comments
                 $stmt->bindParam(":wh", $which);
-                $stmt->bindParam(":whid", $id);
+                $stmt->bindParam(":whid", $id); // map variables
                 $which = $_GET["which"];
-                $id = filter_var($_GET["id"], FILTER_SANITIZE_NUMBER_INT);
-                $stmt->execute();
+                $id = filter_var($_GET["id"], FILTER_SANITIZE_NUMBER_INT); // initialize variables
+                $stmt->execute(); // execute
                 // set the resulting array to associative
                 $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
                 foreach(new RecursiveArrayIterator($stmt->fetchAll()) as $it) {
-                    $conn = true;
-                    $ev = new Comments($it);
-                    echo $ev->info();
-                }
-                $stmt->closeCursor();
+                    $conn = true; // not empty anymore
+                    $ev = new Comments($it); // parse comment
+                    echo $ev->info(); // print comment info
+                } // for each comment
+                $stmt->closeCursor(); // close cursor
                 echo "</div>";
              } catch(PDOException $e) {
                  $conn = true;
                echo "<h1><b>Connection failed:</b></h1>\n<p>Sorry, we could not connect with the server.
                 Try again in a few hours.</p>" /*. $e->getMessage()*/;
-             }
+             } // if caught, display error screen 
              if (!$conn) {
                  echo "<p>There are no items yet.</p>";
-             }
+             } // if empty, display empty screen
             ?>
         </div>
         <?php foot(); ?>
