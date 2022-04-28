@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <?php 
+set_include_path(get_include_path() . PATH_SEPARATOR . getcwd() . '\\..'. PATH_SEPARATOR . getcwd() . '\\..\\processes'
+. PATH_SEPARATOR . getcwd() . '\\..\\private' . PATH_SEPARATOR . getcwd() . '\\..\\..\\private' . PATH_SEPARATOR . getcwd() . '\\..\\..\\processes');
 session_start(); // start session (server variables initialized)
 if (!isset($_SESSION["User"]) || !isset($_SESSION["Pass"])
     || !isset($_SESSION["ID"])) {
@@ -44,7 +46,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 }
 
 // try to upload the file
-if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+if (move_uploaded_file($_FILES["image"]["tmp_name"], getcwd() . '\\..\\'. $target_file)) {
     $_SESSION["imageUpload"] = "The file ". htmlspecialchars( basename( $_FILES["image"]["name"])). " has been uploaded.";
 } else {
     $_SESSION["imageUpload"] = "Sorry, there was an error uploading your file.";
