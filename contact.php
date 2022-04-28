@@ -5,18 +5,36 @@
         <title>Contact Us</title>
         <?php headInfo("Contacts", "Contacts, Contact Us", ["contact"]); ?>
         <script>
+
+            /*
+             * Creates a mail link
+             * Preconditions: total information must not exceed 2000 characters.
+             * Postconditions: none
+             * Parameters:
+             * email the sender's email
+             * message user message
+             * name the user name
+             * Returns: none
+             */
             function mail(email, message, name) {
-                let str = "Name: " + name + "\nEmail: " + email + "\nMessage: " + message;
-                let subj = "Contact Message";
+                let str = "Name: " + name + "\nEmail: " + email + "\nMessage: " + message; // body
+                let subj = "Contact Message"; // subject of email
                 window.open('mailto:ugasinfonia@gmail.com?subject=' + subj + '&body=' + encodeURIComponent(str));
             }
 
+            /*
+             * Composes a message
+             * Preconditions: none
+             * Postconditions: none
+             * Parameters: none
+             * Returns: none
+             */
             function compose() {
-                let data = new FormData(document.getElementById("contact-form"));
-                let email = data.get('email');
-                let name = data.get('name');
-                let message = data.get('message');
-                mail(email, message, name);
+                let data = new FormData(document.getElementById("contact-form")); // gets the form data
+                let email = data.get('email'); // gets email
+                let name = data.get('name'); // gets name
+                let message = data.get('message'); // gets message
+                mail(email, message, name); // mails
             }
         </script>
     </head>
