@@ -27,8 +27,8 @@ function head(int $whichActive = -1): void {
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
-                        <span class="pma">ΦMA</span>
-                        <span class="dawgs">Dawgs</span>
+                        <span class="pma">ΦMA - </span>
+                        <span class="dawgs">ΕΛ</span>an>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
