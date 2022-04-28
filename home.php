@@ -3,10 +3,16 @@
 <html lang="en-US">
     <head>
         <title>Home</title>
-        <?php headInfo("Home Page", "Home, Home Page", []); ?>
+        <?php headInfo("Home Page", "Home, Home Page", ["home"]); ?>
     </head>
     <body>
         <?php head(0); ?>
+        <div style="margin-left:auto; margin-right:auto; padding-bottom:10px;">
+            <h1>Phi Mu Alpha Sinfonia - Epsilon Lambda Chapter</h1>
+            <hr class="bar" style="height:2.5px;color:#CC0000;">
+            <hr class="bar" style="height:2.5px;color:#000000;;">
+            <hr class="bar" style="height:2.5px;color:#b38608;">
+        </div>
         <!-- Carousel of pictures with dots indicating which picture its on -->
         <div class="d-block w-50" style="margin-left: auto; margin-right: auto">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -36,6 +42,7 @@
                 </a>
             </div>
         </div>
+        
         <br>
         <br>
         <br>
