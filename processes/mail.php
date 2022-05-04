@@ -1,7 +1,7 @@
 <?php
 define("ADDRESS", "throwaway9134098@gmail.com");
 define("PASSWORD", "1Luckaydawgs");
-define("NAME", "PMASinfomia");
+define("NAME", "PMASinfonia");
 use PHPMailer\PHPMailer\PHPMailer;
 
 require("../vendor/autoload.php");

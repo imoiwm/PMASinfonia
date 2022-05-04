@@ -19,7 +19,7 @@ $SERVER_NAME = "localhost";
 $DATABASE_NAME = "web_dev";
 $USERNAME =  "your_username";
 $PASSWORD = "your_password";
-$test;
+$test = null;
 try {
     $test = new PDO("mysql:host=" . $SERVER_NAME . ";dbname=" . $DATABASE_NAME, $USERNAME, $PASSWORD);
 } catch (PDOException $e) {
