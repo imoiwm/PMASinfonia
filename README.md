@@ -51,6 +51,7 @@ To "register" and add your own user account to the database:
 1. create a file 'defined.php' and put it in a new folder 'private'
     - end result will be 'private/defined.php'
 2. copy either 'private/temp.txt' or this (same contents) and set the desired login info in $USERNAME and $PASSWORD:
+    - P.S.: The default for the username is "root" and the default for the password is "", but check the database user credentials if you have changed them.
 ```
 <?php
 $SERVER_NAME = "localhost";
