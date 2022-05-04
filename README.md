@@ -2,6 +2,34 @@
 __Website for the UGA chapter of Phi Mu Alpha Sinfonia. Alternatively, completed as a Web Development (CSCI4300) project.__
 
 ---------------------------------
+### FAQ:
+ - The entry point (which file should we go to start):
+   - The home.php file is the main page.
+ - How to start the project?
+   - Read the setup portion of the README, then start XAMPP Apache.
+ - What's supposed to be the functionalities?
+   - A home page featuring various photographs with the fraternity.
+   - A calendar featuring events that the fraternity has set up for the community.
+   - A merchandise page to show off the fraternity's merch.
+   - A review page to see the comments made by the members of the fraternity for the given event/merchandise.
+   - A login page to login as a brother and set your password to a random string.
+   - A brother profile page to change your image, email, and bio.
+   - A contact page to get in touch with members of the fraternity.
+ - What browsers+operating systems has your code been tested?
+   - Chrome, Firefox, and Edge for Windows 11
+   - Chrome for Windows 10
+ - What external libraries/frameworks did you used?
+   - Bootstrap 5 (css (local, changed the primary color) and javascript (CDN)).
+   - PHPMailer (installed via composer).
+   - `calendar.js` was borrowed from a site (https://www.sliderrevolution.com/resources/html-calendar/) and modified to also display the location and links.
+   - `moment.js`: was used in the `calendar.js` file (CDN).
+   - `encrypt.php` used code taken from a site (https://levelup.gitconnected.com/encryption-in-php-cf3ca98f4287).
+ - What starter code you used?
+   - The examples on W3Schools for various php files.
+ - The code you actually changed?
+   - The javascript code for the `calendar.js` file to have location and links.
+   - The php code for `encrypt.php` file to use our preferred method of encryption.
+
 #### Hierarchy
 The repository is divided between the `container`, `processes`, `sql`, `img`, and `styles` directories.
  - `container`: Has classes that store and parse data from a row of their respective database tables.
