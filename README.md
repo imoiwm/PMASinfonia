@@ -18,6 +18,7 @@ __Website for the UGA chapter of Phi Mu Alpha Sinfonia. Alternatively, completed
  - What browsers+operating systems has your code been tested?
    - Chrome, Firefox, and Edge for Windows 11
    - Chrome for Windows 10
+   - Note: Some client-side input validation will not work for iphones. Additionally, iphones were not tested.
  - What external libraries/frameworks did you used?
    - Bootstrap 5 (css (local, changed the primary color) and javascript (CDN)).
    - PHPMailer (installed via composer).
