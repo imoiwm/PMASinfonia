@@ -4,9 +4,10 @@ __Website for the UGA chapter of Phi Mu Alpha Sinfonia. Alternatively, completed
 ---------------------------------
 ### FAQ:
  - The entry point (which file should we go to start):
-   - The home.php file is the main page.
+   - The `home.php` file is the main page (localhost/PMASinfonia/home.php).
  - How to start the project?
-   - Read the setup portion of the README, then start XAMPP Apache.
+   - Read the setup portion of the README, then start XAMPP. 
+       - The XAMPP services used are Apache and, if you're using this service for databases, mySQL.
  - What's supposed to be the functionalities?
    - A home page featuring various photographs with the fraternity.
    - A calendar featuring events that the fraternity has set up for the community.
@@ -20,16 +21,18 @@ __Website for the UGA chapter of Phi Mu Alpha Sinfonia. Alternatively, completed
    - Chrome for Windows 10
    - Note: Some client-side input validation will not work for iphones. Additionally, iphones were not tested.
  - What external libraries/frameworks did you used?
-   - Bootstrap 5 (css (local, changed the primary color) and javascript (CDN)).
-   - PHPMailer (installed via composer).
+   - Bootstrap 5 (CSS (stored locally and on the repo) and JavaScript (CDN)).
+   - PHPMailer (installed via Composer).
    - `calendar.js` was borrowed from a site (https://www.sliderrevolution.com/resources/html-calendar/) and modified to also display the location and links.
    - `moment.js`: was used in the `calendar.js` file (CDN).
    - `encrypt.php` used code taken from a site (https://levelup.gitconnected.com/encryption-in-php-cf3ca98f4287).
  - What starter code you used?
-   - The examples on W3Schools for various php files.
+   - The examples on W3Schools for various PHP files.
+   - Refer to the question above for our calendar widget and other elements (e.g. Bootstrap).
  - The code you actually changed?
-   - The javascript code for the `calendar.js` file to have location and links.
-   - The php code for `encrypt.php` file to use our preferred method of encryption.
+   - The JavaScript code for the `calendar.js` file to have location and links.
+   - The PHP code for `encrypt.php` file to use our preferred method of encryption.
+   - Some slight color changes in our Bootstrap CSS stylings (`bscolors.css`) to make our website more consistent.
 
 #### Hierarchy
 The repository is divided between the `container`, `processes`, `sql`, `img`, and `styles` directories.
@@ -62,8 +65,8 @@ The repository is divided between the `container`, `processes`, `sql`, `img`, an
    - `uploads`: Has the uploaded images of the brothers.
  - `styles`: Has the CSS files for the website (custom SASS file for Bootstrap included).
 
-The php files that are not in these directories are the main pages for the website.
-The javascript files are as follows:
+The PHP files that are not in these directories are the main pages for the website.
+The JavaScript files are as follows:
  - `calendar.js`: Borrowed file that makes the calendar for the calendar page.
  - `getEvents.js`: Uses ajax to get the events for the calendar.
  - `validate.js`: Validates the forms that each website uses.
